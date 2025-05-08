@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="users" stylesheets="@../../../../styles/admin_dash.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.main.managementsystem.UsersController">
+   <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <top>
+         <VBox prefHeight="130.0" prefWidth="100.0" styleClass="top_container" BorderPane.alignment="CENTER">
+            <HBox prefHeight="50.0" prefWidth="800.0" styleClass="top_panel">
+               <Label styleClass="name_form" text="Пользователи">
+                  <HBox.margin>
+                     <Insets left="20.0" top="18.0"/>
+                  </HBox.margin>
+               </Label>
+            </HBox>
+            <Line endX="699.0" startX="-100.0" styleClass="line"/>
+            <HBox prefHeight="60.0" prefWidth="200.0" styleClass="top_panel">
+               <VBox.margin>
+                  <Insets/>
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" top="18.0"/>
+               </padding>
+               <Button fx:id="addButton" mnemonicParsing="false" text="Добавить"/>
+               <Button fx:id="editButton" mnemonicParsing="false" text="Редактировать"/>
+               <Button fx:id="lockButton" mnemonicParsing="false" text="Заблокировать"/>
+               <Label styleClass="filter_lbl" text="Фильтр:">
+                  <HBox.margin>
+                     <Insets left="40.0"/>
+                  </HBox.margin>
+               </Label>
+               <TextField fx:id="filterField" styleClass="filter_fld">
+                  <HBox.margin>
+                     <Insets left="-13.0"/>
+                  </HBox.margin>
+               </TextField>
+               <Button mnemonicParsing="false" styleClass="clean_btn">
+                  <graphic>
+                     <ImageView fx:id="cleanButton" fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../../../icons/clean.png"/>
+                     </ImageView>
+                  </graphic>
+                  <HBox.margin>
+                     <Insets left="-13.0"/>
+                  </HBox.margin>
+               </Button>
+            </HBox>
+         </VBox>
+      </top>
+      <center>
+         <TableView prefHeight="200.0" prefWidth="800.0" styleClass="table" BorderPane.alignment="CENTER">
+            <columns>
+               <TableColumn text="ID"/>
+               <TableColumn minWidth="4.0" prefWidth="70.0" text="Логин"/>
+               <TableColumn prefWidth="75.0" text="Роль"/>
+               <TableColumn prefWidth="75.0" text="Отдел"/>
+               <TableColumn prefWidth="75.0" text="Статус"/>
+            </columns>
+         </TableView>
+      </center>
+   </BorderPane>
+</AnchorPane>

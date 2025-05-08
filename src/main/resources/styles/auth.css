@@ -1,0 +1,38 @@
+.login_container{
+    -fx-background-color : #F2EFE7;
+}
+
+.login_form_container{
+    -fx-spacing: 20;
+    -fx-padding: 120px;
+    -fx-alignment: center;
+    -fx-font-family: "Trebuchet MS";
+}
+
+.login_form_container .input_field{
+    -fx-background-color : #9ACBD0;
+    -fx-pref-height: 40;
+    -fx-font-size: 1.2em;
+    -fx-pref-width: 250;
+}
+
+.login_form_container Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 150;
+    -fx-pref-height: 35;
+    -fx-font-size: 1.2em;
+}
+
+.login_form_container Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.login_form_container .error_lbl{
+    -fx-font-size: 1em;
+}
+
+.login_form_container .logo_lbl{
+    -fx-font-size: 1.3em;
+}
