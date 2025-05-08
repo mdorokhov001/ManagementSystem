@@ -16,7 +16,7 @@
                <Image url="@../../../../icons/admin.png" />
             </ImageView>
          </HBox>
-         <Label prefWidth="172.0" text="Панель администратора" />
+         <Label fx:id="logoLabel" prefWidth="172.0" text="Панель администратора" />
       </VBox>
       <VBox prefHeight="200.0" prefWidth="180.0" styleClass="main_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
          <Button fx:id="usersButton" mnemonicParsing="false" text="Пользователи" />

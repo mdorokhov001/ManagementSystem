@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import ru.main.managementsystem.Model.Model;
 
 import java.net.URL;
@@ -18,6 +19,12 @@ public class AuthController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loginButton.setOnAction(event -> Model.getInstance().getViewFactory().showAdminWindow());
+        loginButton.setOnAction(event -> onLogin());
+    }
+
+    private void onLogin(){
+        Stage stage = (Stage) errorLabel.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showAdminWindow();
     }
 }
