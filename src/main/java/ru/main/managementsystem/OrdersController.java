@@ -16,6 +16,7 @@ public class OrdersController implements Initializable {
     public DatePicker dateTo;
     public ComboBox assigneeCombobox;
     public TableView ordersTable;
+    public CheckBox selectAllRowCheckbox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

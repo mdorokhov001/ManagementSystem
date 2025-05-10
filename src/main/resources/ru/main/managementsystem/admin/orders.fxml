@@ -14,9 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="orders" stylesheets="@../../../../styles/admin_dash.css"
-            xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.OrdersController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="orders" stylesheets="@../../../../styles/admin_dash.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.OrdersController">
    <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <top>
          <VBox prefHeight="180.0" prefWidth="800.0" styleClass="top_container" BorderPane.alignment="CENTER">
@@ -82,12 +80,17 @@
       <center>
          <TableView fx:id="ordersTable" prefHeight="408.0" prefWidth="800.0" styleClass="table" BorderPane.alignment="CENTER">
             <columns>
-               <TableColumn text="ID" />
-               <TableColumn minWidth="4.0" prefWidth="70.0" text="Название" />
-               <TableColumn prefWidth="75.0" text="Тип" />
-               <TableColumn prefWidth="75.0" text="Статус" />
-               <TableColumn prefWidth="75.0" text="Создатель" />
-               <TableColumn prefWidth="75.0" text="Дата создания" />
+               <TableColumn prefWidth="109.0" text="Выбрать">
+                  <graphic>
+                     <CheckBox fx:id="selectAllRowCheckbox" mnemonicParsing="false" prefHeight="16.0" prefWidth="15.0" styleClass="checkbox" />
+                  </graphic>
+               </TableColumn>
+               <TableColumn prefWidth="77.0" text="№" />
+               <TableColumn minWidth="4.0" prefWidth="107.0" text="Название" />
+               <TableColumn minWidth="0.0" prefWidth="102.0" text="Тип" />
+               <TableColumn minWidth="0.0" prefWidth="95.0" text="Статус" />
+               <TableColumn minWidth="0.0" prefWidth="122.0" text="Создатель" />
+               <TableColumn minWidth="0.0" prefWidth="148.0" text="Дата создания" />
             </columns>
          </TableView>
       </center>

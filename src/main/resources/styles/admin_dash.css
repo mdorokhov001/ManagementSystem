@@ -225,10 +225,6 @@
    -fx-spacing: 10;
 }
 
-
-
-
-
 .orders .table{
     -fx-pref-width: 100%; /* Ширина таблицы */
     -fx-padding: 0; /* Убираем отступы */
@@ -241,7 +237,7 @@
     -fx-font-size: 1em;
     -fx-padding: 15; /* Отступы для заголовков */
     -fx-background-color: #48A6A7; /* Фон заголовков */
-    -fx-pref-width: 128;
+
 }
 
 .orders .table .column-header .label{
@@ -256,4 +252,117 @@
 
 .orders .table .table-row-cell:hover {
     -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}
+
+.orders .table .checkbox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.orders .table .checkbox: hover{
+    -fx-cursor: hand;
+}
+
+
+/* Дашборд админа, экран отчеты */
+.reports {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+/* Название экрана */
+.reports .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.reports .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.reports .filter_lbl_container Label {
+    -fx-label-padding: 5 20 0 20 0;
+    -fx-font-size: 1.1em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.reports .filter_container{
+    -fx-spacing: 15;
+}
+
+.reports .filter_combobox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1em;
+
+}
+
+.reports .list-view {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #9ACBD0;
+    -fx-border: 2;
+    -fx-text-fill: #9ACBD0;
+}
+
+.reports .filter_combobox .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.reports .filter_combobox: hover{
+    -fx-cursor: hand;
+    -fx-background-color : #48A6A7;
+}
+
+.reports .filter_checkbox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.reports .filter_checkbox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.reports .filter_checkbox: hover{
+    -fx-cursor: hand;
+}
+
+.reports .filter_datepicker{
+    -fx-border-color: #48A6A7;
+}
+
+.reports .filter_datepicker .box{
+        -fx-background-color : #F2EFE7;
+        -fx-text-fill: #FFFFFF;
+        -fx-font-size: 1em;
+}
+
+.reports .filter_datepicker .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.reports .filter_datepicker .arrow:hover{
+    -fx-cursor: hand;
+}
+
+.reports .vbox{
+   -fx-spacing: 10;
+}
+
+.reports Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 160;
+    -fx-pref-height: 25;
+    -fx-font-size: 1em;
+}
+
+.reports Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
 }
