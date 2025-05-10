@@ -1,0 +1,259 @@
+.menu{
+    -fx-background-color: #006A71;
+    -fx-font-family: "Trebuchet MS";
+}
+
+.menu .logo_container{
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+.menu .main_container{
+    -fx-spacing: 20;
+}
+
+.menu .logout_container{
+    -fx-spacing: 20;
+}
+
+.menu Button{
+    -fx-background-color : #006A71;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 180;
+    -fx-pref-height: 35;
+    -fx-font-size: 1.2em;
+}
+
+.menu Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #00555C;
+}
+
+.menu Label{
+    -fx-text-fill: #009CA5;
+    -fx-font-size: 1.3em;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+/* Дашборд админа, экран пользователи */
+.users {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+
+.users .top_panel{
+    -fx-spacing: 20;
+}
+
+/* Название экрана */
+.users .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.users .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.users .top_panel Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 120;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+.users .top_panel Button : hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.users .top_panel .clean_btn {
+    -fx-pref-width: 20;
+    -fx-pref-height: 17;
+}
+
+.users .top_panel .clean_btn : hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.users .top_panel .filter_lbl {
+    -fx-font-size: 1.2em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.users .top_panel .filter_fld{
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.users .table{
+    -fx-pref-width: 100%; /* Ширина таблицы */
+    -fx-padding: 0; /* Убираем отступы */
+    -fx-background-color: transparent; /* Фон таблицы */
+    -fx-border-color: #9ACBD0; /* Цвет рамки */
+    -fx-border-width: 20; /* Ширина рамки */
+}
+
+.users .table .column-header {
+    -fx-font-size: 1em;
+    -fx-padding: 15; /* Отступы для заголовков */
+    -fx-background-color: #48A6A7; /* Фон заголовков */
+    -fx-pref-width: 152;
+}
+
+.users .table .column-header .label{
+    -fx-text-fill: #FFFFFF;
+}
+
+
+.users .table .table-row-cell {
+    -fx-padding: 5; /* Отступы для ячеек */
+    -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
+    -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+}
+
+.users .table .table-row-cell:hover {
+    -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}
+
+/* Дашборд админа, экран заявки */
+.orders {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+/* Название экрана */
+.orders .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.orders .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.orders .filter_lbl_container{
+
+}
+
+.orders .filter_lbl_container Label {
+    -fx-label-padding: 5 20 0 20 0;
+    -fx-font-size: 1.1em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.orders .filter_container{
+    -fx-spacing: 15;
+}
+
+.orders .filter_fld{
+   /* -fx-background-color : #F2EFE7; */
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-font-size: 1em;
+}
+
+.orders .filter_combobox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1em;
+
+}
+
+.orders .list-view {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #9ACBD0;
+    -fx-border: 2;
+    -fx-text-fill: #9ACBD0;
+}
+
+.orders .filter_combobox .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.orders .filter_combobox: hover{
+    -fx-cursor: hand;
+    -fx-background-color : #48A6A7;
+}
+
+.orders .filter_checkbox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.orders .filter_checkbox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.orders .filter_checkbox: hover{
+    -fx-cursor: hand;
+}
+
+.orders .filter_datepicker{
+    -fx-border-color: #48A6A7;
+}
+
+.orders .filter_datepicker .box{
+        -fx-background-color : #F2EFE7;
+        -fx-text-fill: #FFFFFF;
+        -fx-font-size: 1em;
+}
+
+.orders .filter_datepicker .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.orders .filter_datepicker .arrow:hover{
+    -fx-cursor: hand;
+}
+
+.orders .vbox{
+   -fx-spacing: 10;
+}
+
+
+
+
+
+.orders .table{
+    -fx-pref-width: 100%; /* Ширина таблицы */
+    -fx-padding: 0; /* Убираем отступы */
+    -fx-background-color: transparent; /* Фон таблицы */
+    -fx-border-color: #9ACBD0; /* Цвет рамки */
+    -fx-border-width: 20; /* Ширина рамки */
+}
+
+.orders .table .column-header {
+    -fx-font-size: 1em;
+    -fx-padding: 15; /* Отступы для заголовков */
+    -fx-background-color: #48A6A7; /* Фон заголовков */
+    -fx-pref-width: 128;
+}
+
+.orders .table .column-header .label{
+    -fx-text-fill: #FFFFFF;
+}
+
+.orders .table .table-row-cell {
+    -fx-padding: 5; /* Отступы для ячеек */
+    -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
+    -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+}
+
+.orders .table .table-row-cell:hover {
+    -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}

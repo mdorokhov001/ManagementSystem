@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../../../styles/auth.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.main.managementsystem.AuthController">
+   <BorderPane prefHeight="400.0" prefWidth="600.0">
+      <center>
+         <VBox styleClass="login_form_container" BorderPane.alignment="CENTER">
+            <Label styleClass="logo_lbl" text="Система управления заявками"/>
+            <TextField fx:id="loginField" styleClass="input_field">
+               <VBox.margin>
+                  <Insets/>
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="passwordField" styleClass="input_field">
+               <VBox.margin>
+                  <Insets/>
+               </VBox.margin>
+            </PasswordField>
+            <Button fx:id="loginButton" mnemonicParsing="false" text="Войти в систему">
+               <VBox.margin>
+                  <Insets/>
+               </VBox.margin>
+            </Button>
+            <Label fx:id="errorLabel" styleClass="error_lbl">
+               <VBox.margin>
+                  <Insets/>
+               </VBox.margin>
+            </Label>
+         </VBox>
+      </center>
+   </BorderPane>
+</AnchorPane>
