@@ -23,7 +23,7 @@ public class AdminDashboardController implements Initializable {
 
     private void addListeners(){
         usersButton.setOnAction(event -> onUsers());
-//        ordersButton.setOnAction(event -> onOrders());
+        ordersButton.setOnAction(event -> onOrders());
 //        reportsButton.setOnAction(event -> onReports());
 //        settingsButton.setOnAction(event -> onSettingsButton());
     }
@@ -34,6 +34,7 @@ public class AdminDashboardController implements Initializable {
     }
 
     private void onOrders(){
+        System.out.println("Кнопка нажата");
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Заявки");
     }
     private void onReports(){

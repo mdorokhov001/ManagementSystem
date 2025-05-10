@@ -16,6 +16,7 @@ import java.io.IOException;
 public class ViewFactory {
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane usersView;
+    private AnchorPane ordersView;
     private AnchorPane adminMainView;
 
     public ViewFactory(){
@@ -26,6 +27,20 @@ public class ViewFactory {
         return adminSelectedMenuItem;
     }
 
+    //  Окно Админ
+    public AnchorPane getAdminMainView(){
+        if (adminMainView == null){
+            try{
+                adminMainView = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/admin_main.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return adminMainView;
+    }
+
+    //  Окно Админ-Пользователи
     public AnchorPane getUsersView(){
         if (usersView == null){
             try{
@@ -39,16 +54,18 @@ public class ViewFactory {
         return usersView;
     }
 
-    public AnchorPane getAdminMainView(){
-        if (adminMainView == null){
+    //  Окно Админ-Заявки
+    public AnchorPane getOrdersView(){
+        if (ordersView == null){
             try{
-                adminMainView = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/admin_main.fxml")).load();
+                ordersView = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/orders.fxml")).load();
+                System.out.println("Orders view загружен");
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
 
-        return adminMainView;
+        return ordersView;
     }
 
     public void showLoginWindow() {
@@ -64,6 +81,7 @@ public class ViewFactory {
 
     }
 
+    //окно после авторизации
     public void showAdminWindow() {
         FXMLLoader loader = null;
         Parent root;
@@ -78,18 +96,19 @@ public class ViewFactory {
         createStage(root, "Панель администратора");
     }
 
+    //окно после авторизации
     public void showUsersWindow() {
         FXMLLoader loader = null;
         Parent root;
         try {
-            loader = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/users.fxml"));
+            loader = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/users/user.fxml"));
             root = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         UsersController usersController = new UsersController();
         loader.setController(usersController);
-        createStage(root, "Пользователи");
+        createStage(root, "Панель пользователя");
     }
 
 

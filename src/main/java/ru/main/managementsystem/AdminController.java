@@ -22,6 +22,7 @@ public class AdminController implements Initializable {
             System.out.println("Новое значение: " + newVal);
             switch (newVal){
                case "Пользователи" -> admin_parent.setCenter(Model.getInstance().getViewFactory().getUsersView());
+               case "Заявки"  ->  admin_parent.setCenter(Model.getInstance().getViewFactory().getOrdersView());
                default -> admin_parent.setCenter(Model.getInstance().getViewFactory().getAdminMainView());
            }
         } );
