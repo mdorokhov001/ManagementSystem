@@ -18,6 +18,7 @@ public class ViewFactory {
     private AnchorPane usersView;
     private AnchorPane ordersView;
     private AnchorPane reportsView;
+    private AnchorPane settingsView;
     private AnchorPane adminMainView;
 
     public ViewFactory(){
@@ -82,6 +83,19 @@ public class ViewFactory {
         return reportsView;
     }
 
+    // Окно Админ-настройки
+    public AnchorPane getSettingsView(){
+        if (settingsView == null){
+            try{
+                settingsView = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/settings.fxml")).load();
+                System.out.println("Settings View загружен");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return settingsView;
+    }
     public void showLoginWindow() {
         FXMLLoader loader = null;
         Parent root;
