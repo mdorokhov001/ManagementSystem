@@ -24,8 +24,8 @@ public class AdminDashboardController implements Initializable {
     private void addListeners(){
         usersButton.setOnAction(event -> onUsers());
         ordersButton.setOnAction(event -> onOrders());
-//        reportsButton.setOnAction(event -> onReports());
-//        settingsButton.setOnAction(event -> onSettingsButton());
+        reportsButton.setOnAction(event -> onReports());
+        settingsButton.setOnAction(event -> onSettingsButton());
     }
 
     private void onUsers(){

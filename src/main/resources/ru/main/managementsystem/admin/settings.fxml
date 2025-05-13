@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="settings" stylesheets="@../../../../styles/admin_dash.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.SettingsController">
+   <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <top>
+         <VBox prefHeight="52.0" prefWidth="800.0" styleClass="top_container" BorderPane.alignment="CENTER">
+            <HBox prefHeight="50.0" prefWidth="800.0" styleClass="top_panel">
+               <Label styleClass="name_form" text="Настройки">
+                  <HBox.margin>
+                     <Insets left="20.0" top="18.0" />
+                  </HBox.margin>
+               </Label>
+            </HBox>
+         </VBox>
+      </top>
+      <center>
+
+      </center>
+      <center>
+          <TabPane pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" styleClass="tabpane_container" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <Tab text="Роли и права">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <VBox prefHeight="517.0" prefWidth="800.0" styleClass="roles">
+                          <HBox prefHeight="38.0" prefWidth="800.0" styleClass="name">
+                              <Label text="Список ролей">
+                                  <HBox.margin>
+                                      <Insets left="100.0" top="10.0" />
+                                  </HBox.margin>
+                              </Label>
+                              <Label text="Права">
+                                  <HBox.margin>
+                                      <Insets left="220.0" top="10.0" />
+                                  </HBox.margin>
+                              </Label>
+                          </HBox>
+                          <HBox prefHeight="339.0" prefWidth="800.0" styleClass="container">
+                              <ListView fx:id="rolesList" prefHeight="339.0" prefWidth="271.0">
+                                  <HBox.margin>
+                                      <Insets left="20.0" />
+                                  </HBox.margin>
+                              </ListView>
+                              <GridPane prefHeight="339.0" prefWidth="238.0" vgap="10.0">
+
+                                  <!-- Категория: Управление заявками -->
+                                  <Text text="Управление заявками" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+                                  <CheckBox fx:id="createOrderBox" styleClass="checkbox" text="Создание заявок" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                                  <CheckBox fx:id="editOrderBox" styleClass="checkbox" text="Редактирование любых заявок" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+                                  <CheckBox fx:id="setExecutorBox" styleClass="checkbox" text="Назначение исполнителей" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                                  <CheckBox fx:id="closeOrderBox" styleClass="checkbox" text="Закрытие заявок" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+                                  <!-- Разделитель -->
+                                  <Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+
+                                  <!-- Категория: Отчетность -->
+                                  <Text text="Отчетность" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+
+                                  <CheckBox fx:id="generateReportBox" styleClass="checkbox" text="Генерация PDF-отчетов" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+
+                                  <CheckBox fx:id="showStatsBox" styleClass="checkbox" text="Просмотр статистики" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+
+                                  <!-- Кнопки управления -->
+                                  <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                                      <Button fx:id="resetButton" text="Сбросить" />
+                                      <Button fx:id="saveButton" text="Сохранить" />
+                                  </HBox>
+                                  <columnConstraints>
+                                      <ColumnConstraints />
+                                      <ColumnConstraints />
+                                  </columnConstraints>
+                                  <rowConstraints>
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                      <RowConstraints />
+                                  </rowConstraints>
+                                  <HBox.margin>
+                                      <Insets left="40.0" top="20.0" />
+                                  </HBox.margin>
+                              </GridPane>
+                          </HBox>
+                          <HBox prefHeight="119.0" prefWidth="800.0">
+                              <Button fx:id="addRoleButton" mnemonicParsing="false" text="Добавить роль">
+                                  <HBox.margin>
+                                      <Insets left="25.0" top="20.0" />
+                                  </HBox.margin>
+                              </Button>
+                              <Button fx:id="deleteRoleButton" mnemonicParsing="false" text="Удалить роль">
+                                  <HBox.margin>
+                                      <Insets left="20.0" top="20.0" />
+                                  </HBox.margin>
+                              </Button>
+                          </HBox>
+                      </VBox>
+                  </AnchorPane>
+              </Tab>
+              <Tab text="Параметры заявок">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="180.0" prefWidth="200.0">
+                      <HBox prefHeight="518.0" prefWidth="800.0" styleClass="sett_orders">
+                          <VBox prefHeight="518.0" prefWidth="400.0" styleClass="vbox">
+                              <Label styleClass="lbl" text="Типы заявок">
+                                  <VBox.margin>
+                                      <Insets left="150.0" top="10.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <TableView fx:id="ordersTable" prefHeight="290.0" prefWidth="399.0" styleClass="table">
+                                  <columns>
+                                      <TableColumn text="Название" />
+                                      <TableColumn text="Описание" />
+                                      <TableColumn text="Иконка" />
+                                  </columns>
+                              </TableView>
+
+                              <HBox spacing="10" styleClass="hbox">
+                                  <Button fx:id="addTypeButton" text="Добавить тип">
+                                      <HBox.margin>
+                                          <Insets left="50.0" />
+                                      </HBox.margin>
+                                  </Button>
+                                  <Button fx:id="removeTypeButton" text="Удалить тип" />
+                              </HBox>
+                          </VBox>
+                          <VBox prefHeight="518.0" prefWidth="402.0" styleClass="vbox">
+                              <Label styleClass="lbl" text="Статусы заявок">
+                                  <VBox.margin>
+                                      <Insets left="145.0" top="10.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <FlowPane fx:id="statusFlowPane" prefHeight="110.0" prefWidth="391.0">
+                                  <VBox styleClass="vbox">
+                                      <HBox alignment="CENTER_LEFT" styleClass="hbox">
+                                          <Rectangle fill="#4CAF50" height="25.0" width="25.0" />
+                                          <TextField fx:id="statusTextField" text="Открыта" />
+                                      </HBox>
+                                      <HBox alignment="CENTER_LEFT" styleClass="hbox">
+                                          <Label styleClass="color_lbl" text="Цвет:" />
+                                          <ColorPicker fx:id="colorPicker" prefHeight="29.0" prefWidth="106.0" styleClass="color_picker" />
+
+                                          <CheckBox fx:id="isFinalBox" text="Финальный" />
+                                      </HBox>
+                                  </VBox>
+                              </FlowPane>
+                              <Button fx:id="addStatusButton" text="Добавить статус">
+                                  <VBox.margin>
+                                      <Insets left="145.0" />
+                                  </VBox.margin>
+                              </Button>
+                          </VBox>
+                      </HBox>
+                  </AnchorPane>
+              </Tab>
+              <Tab text="Резервное копирование">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="reserve">
+                      <VBox prefHeight="518.0" prefWidth="800.0" styleClass="vbox">
+                          <VBox prefHeight="141.0" prefWidth="800.0" styleClass="vbox">
+                              <Label styleClass="name_lbl" text="Создание резервной копии">
+                                  <VBox.margin>
+                                      <Insets left="20.0" top="10.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="26.0" prefWidth="800.0" styleClass="hbox">
+                                  <VBox.margin>
+                                      <Insets left="20.0" />
+                                  </VBox.margin>
+                                  <Label styleClass="lbl" text="Формат:">
+                                      <HBox.margin>
+                                          <Insets left="20.0" />
+                                      </HBox.margin>
+                                  </Label>
+                                  <RadioButton fx:id="sqlButton" mnemonicParsing="false" text="SQL" />
+                                  <RadioButton fx:id="jsonButton" mnemonicParsing="false" text="JSON" />
+                                  <RadioButton fx:id="cvsButton" mnemonicParsing="false" text="CSV" />
+                              </HBox>
+                              <HBox prefHeight="24.0" prefWidth="800.0" styleClass="hbox">
+                                  <VBox.margin>
+                                      <Insets left="20.0" />
+                                  </VBox.margin>
+                                  <Label styleClass="lbl" text="Путь сохранения:">
+                                      <HBox.margin>
+                                          <Insets left="20.0" />
+                                      </HBox.margin>
+                                  </Label>
+                                  <TextField fx:id="savePathField" />
+                                  <Button fx:id="viewPathButton" mnemonicParsing="false" text="Обзор" />
+                              </HBox>
+                              <HBox>
+                                  <VBox.margin>
+                                      <Insets left="20.0" />
+                                  </VBox.margin>
+                                  <Button fx:id="exportButton" mnemonicParsing="false" prefHeight="23.0" prefWidth="326.0" styleClass="progressBtn" text="Экспортировать">
+                                      <graphic>
+                                          <ProgressBar prefHeight="18.0" prefWidth="205.0" progress="0.0" />
+                                      </graphic>
+                                      <HBox.margin>
+                                          <Insets left="20.0" />
+                                      </HBox.margin>
+                                  </Button>
+                              </HBox>
+                          </VBox>
+                          <VBox prefHeight="135.0" prefWidth="800.0" styleClass="vbox">
+                              <Label styleClass="name_lbl" text="Восстановление">
+                                  <VBox.margin>
+                                      <Insets left="20.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <VBox styleClass="vbox">
+                                  <HBox styleClass="vbox">
+                                      <VBox.margin>
+                                          <Insets left="40.0" />
+                                      </VBox.margin>
+                                      <Button fx:id="chooseFileButton" mnemonicParsing="false" text="Выбрать файл" />
+                                      <Label fx:id="fileNameLabel" styleClass="lbl" text="файл" />
+                                  </HBox>
+                                  <CheckBox fx:id="cleanDataBox" mnemonicParsing="false" text="Очистить текущие данные перед восстановлением">
+                                      <VBox.margin>
+                                          <Insets left="40.0" />
+                                      </VBox.margin>
+                                  </CheckBox>
+                                  <Button fx:id="importButton" mnemonicParsing="false" text="Импортировать">
+                                      <VBox.margin>
+                                          <Insets left="40.0" />
+                                      </VBox.margin>
+                                  </Button>
+                              </VBox>
+                          </VBox>
+                          <VBox>
+                              <Label styleClass="name_lbl" text="Лог последних операций">
+                                  <VBox.margin>
+                                      <Insets left="20.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="173.0" prefWidth="800.0">
+                                  <TextArea fx:id="logsTextArea" prefHeight="128.0" prefWidth="809.0">
+                                      <HBox.margin>
+                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                      </HBox.margin>
+                                  </TextArea>
+                              </HBox>
+                          </VBox>
+                      </VBox>
+                  </AnchorPane>
+              </Tab>
+          </TabPane>
+      </center>
+   </BorderPane>
+</AnchorPane>
