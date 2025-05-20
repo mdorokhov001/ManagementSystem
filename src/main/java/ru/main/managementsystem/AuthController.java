@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import ru.main.managementsystem.Model.Model;
+import ru.main.managementsystem.DataBase.DB;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,8 @@ public class AuthController implements Initializable {
     }
 
     private void onLogin(){
+        DB.initializeDatabase();
+
         Stage stage = (Stage) errorLabel.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
         Model.getInstance().getViewFactory().showAdminWindow();

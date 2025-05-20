@@ -7,8 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import ru.main.managementsystem.AdminController;
-import ru.main.managementsystem.UsersController;
+import ru.main.managementsystem.admin.AdminController;
+import ru.main.managementsystem.admin.submenues.UsersController;
 
 import java.io.IOException;
 
@@ -16,10 +16,12 @@ import java.io.IOException;
 public class ViewFactory {
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane usersView;
+    private AnchorPane usersDialogView;
     private AnchorPane ordersView;
     private AnchorPane reportsView;
     private AnchorPane settingsView;
     private AnchorPane adminMainView;
+
 
     public ViewFactory(){
         this.adminSelectedMenuItem = new SimpleStringProperty("");

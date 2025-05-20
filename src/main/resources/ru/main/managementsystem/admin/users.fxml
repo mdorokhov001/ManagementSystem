@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,8 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="users" stylesheets="@../../../../styles/admin_dash.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ru.main.managementsystem.UsersController">
+<AnchorPane prefHeight="600.0" prefWidth="950.0" styleClass="users" stylesheets="@../../../../styles/admin_dash.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.admin.submenues.UsersController">
    <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <top>
          <VBox prefHeight="130.0" prefWidth="100.0" styleClass="top_container" BorderPane.alignment="CENTER">
@@ -26,7 +26,7 @@
                   </HBox.margin>
                </Label>
             </HBox>
-            <Line endX="699.0" startX="-100.0" styleClass="line" />
+            <Line endX="849.0" startX="-100.0" styleClass="line" />
             <HBox prefHeight="60.0" prefWidth="200.0" styleClass="top_panel">
                <VBox.margin>
                   <Insets />
@@ -34,12 +34,21 @@
                <padding>
                   <Insets left="20.0" top="18.0" />
                </padding>
-               <Button fx:id="addButton" mnemonicParsing="false" text="Добавить" />
-               <Button fx:id="editButton" mnemonicParsing="false" text="Редактировать" />
-               <Button fx:id="lockButton" mnemonicParsing="false" text="Заблокировать" />
+               <Button mnemonicParsing="false" onAction="#handleRefresh" styleClass="clean_btn">
+                  <graphic>
+                     <ImageView fx:id="refreshButton" fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../../../icons/refresh.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAddUser" text="Добавить" />
+               <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEditUser" text="Редактировать" />
+               <Button fx:id="lockButton" mnemonicParsing="false" onAction="#handleBlockUser" text="Заблокировать" />
                <Label styleClass="filter_lbl" text="Поиск:">
                   <HBox.margin>
-                     <Insets left="45.0" />
+                     <Insets left="25.0" />
                   </HBox.margin>
                </Label>
                <TextField fx:id="searchField" styleClass="filter_fld">
@@ -61,13 +70,35 @@
          </VBox>
       </top>
       <center>
-         <TableView fx:id="usersTable" prefHeight="200.0" prefWidth="800.0" styleClass="table" BorderPane.alignment="CENTER">
+         <TableView fx:id="usersTable" prefHeight="470.0" prefWidth="824.0" styleClass="table" BorderPane.alignment="CENTER">
             <columns>
-               <TableColumn text="ID" />
-               <TableColumn minWidth="4.0" prefWidth="70.0" text="Логин" />
-               <TableColumn prefWidth="75.0" text="Роль" />
-               <TableColumn prefWidth="75.0" text="Отдел" />
-               <TableColumn prefWidth="75.0" text="Статус" />
+               <TableColumn fx:id="idColumn" prefWidth="38.0" text="ID">
+                  <cellValueFactory><PropertyValueFactory property="userId" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="usernameColumn" prefWidth="113.0" text="Логин">
+                  <cellValueFactory><PropertyValueFactory property="username" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="passwordColumn" prefWidth="115.0" text="Пароль">
+                  <cellValueFactory><PropertyValueFactory property="password" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="fullNameColumn" prefWidth="108.0" text="ФИО">
+                  <cellValueFactory><PropertyValueFactory property="fullName" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="emailColumn" minWidth="0.0" prefWidth="106.0" text="Email">
+                  <cellValueFactory><PropertyValueFactory property="email" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="departmentColumn" prefWidth="99.0" text="Отдел">
+                  <cellValueFactory><PropertyValueFactory property="departmentName" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="statusColumn" prefWidth="77.0" text="Статус">
+                  <cellValueFactory><PropertyValueFactory property="active" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="createdColumn" prefWidth="129.0" text="Создан">
+                  <cellValueFactory><PropertyValueFactory property="createdAt" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="lastloginColumn" prefWidth="124.0" text="Последний вход">
+                  <cellValueFactory><PropertyValueFactory property="lastLogin" /></cellValueFactory>
+               </TableColumn>
             </columns>
          </TableView>
       </center>
