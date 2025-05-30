@@ -1,6 +1,7 @@
 package ru.main.managementsystem.admin.entity;
 
 import javafx.beans.property.*;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -49,7 +50,7 @@ public class User {
         }
 
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS");
             return LocalDateTime.parse(dateStr, formatter);
         } catch (DateTimeParseException e) {
             System.err.println("Ошибка парсинга даты: " + dateStr);
@@ -97,11 +98,11 @@ public class User {
     }
 
     public StringProperty passwordProperty() {
-        return password;
+        return new SimpleStringProperty("********");
     }
 
     public void setPassword(String password) {
-        this.password.set(password);
+        this.password.set(BCrypt.hashpw(password, BCrypt.gensalt()));
     }
 
     public String getFullName() {

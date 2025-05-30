@@ -2,6 +2,7 @@ package ru.main.managementsystem.admin.dao;
 
 import ru.main.managementsystem.DataBase.DB;
 import ru.main.managementsystem.admin.entity.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -45,13 +46,15 @@ public class UserDAO {
         String sql = "INSERT INTO users(username, password_hash, full_name, email, department_id, is_active, created_at) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?)";
 
+        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+
         System.out.println("Подготовка данных к записи");
         try (Connection conn = DB.getConnection()) {
             int departmentId = departmentDAO.getDepartmentIdByName(conn, user.getDepartmentName());
 
             try (PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 pstmt.setString(1, user.getUsername());
-                pstmt.setString(2, user.getPassword());
+                pstmt.setString(2, hashedPassword);
                 pstmt.setString(3, user.getFullName());
                 pstmt.setString(4, user.getEmail());
                 pstmt.setInt(5, departmentId);
@@ -73,6 +76,9 @@ public class UserDAO {
     public void updateUser(User user) throws SQLException {
         String sql = "UPDATE users SET username = ?, password_hash = ?, full_name = ?, email = ?, " +
                 "department_id = ?, is_active = ? WHERE user_id = ?";
+
+        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+
         System.out.println("Подготовка данных к записи");
         try (Connection conn = DB.getConnection()) {
 
@@ -81,7 +87,7 @@ public class UserDAO {
             try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 System.out.println("Коннект открыт");
                 pstmt.setString(1, user.getUsername());
-                pstmt.setString(2, user.getPassword());
+                pstmt.setString(2, hashedPassword);
                 pstmt.setString(3, user.getFullName());
                 pstmt.setString(4, user.getEmail());
                 pstmt.setInt(5, departmentId);

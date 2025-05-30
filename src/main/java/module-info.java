@@ -2,6 +2,7 @@ module ru.main.managementsystem {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires jbcrypt;
 
 
     opens ru.main.managementsystem to javafx.fxml;

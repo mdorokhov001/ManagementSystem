@@ -4,37 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Добавлен раздел Отчеты">
-      <change afterPath="$PROJECT_DIR$/management.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/DataBase/DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/DepartmentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/UsersDialogWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/users_dialog_window.fxml" afterDir="false" />
+    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Подключена База данных. CRUD для users">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management.db" beforeDir="false" afterPath="$PROJECT_DIR$/management.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AdminMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/ReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/ReportsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/broom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin_dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin_dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin_main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/orders.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/reports.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/reports.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/settings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/users.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/admin_dash.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/admin_dash.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746909543357</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Подключена База данных. CRUD для users">
+      <option name="closed" value="true" />
+      <created>1747777970041</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747777970041</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -177,6 +161,7 @@
     <MESSAGE value="Пекреключение на Пользователей" />
     <MESSAGE value="Добавлен раздел Заявки" />
     <MESSAGE value="Добавлен раздел Отчеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен раздел Отчеты" />
+    <MESSAGE value="Подключена База данных. CRUD для users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подключена База данных. CRUD для users" />
   </component>
 </project>
