@@ -58,6 +58,14 @@ public class User {
         }
     }
 
+    public boolean checkPassword(String password) {
+        return BCrypt.checkpw(password, this.getPassword());
+    }
+
+    public boolean isAdmin(){
+        return this.getUsername().equals("admin");
+    }
+
     public boolean isSelected() {
         return selected.get();
     }

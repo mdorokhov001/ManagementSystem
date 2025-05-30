@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Подключена База данных. CRUD для users">
+    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Фикс даты, хэширование пароля">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management.db" beforeDir="false" afterPath="$PROJECT_DIR$/management.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/DepartmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/DepartmentDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/User.java" afterDir="false" />
     </list>
@@ -153,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747777970041</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Фикс даты, хэширование пароля">
+      <option name="closed" value="true" />
+      <created>1748629502571</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748629502571</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -162,6 +172,7 @@
     <MESSAGE value="Добавлен раздел Заявки" />
     <MESSAGE value="Добавлен раздел Отчеты" />
     <MESSAGE value="Подключена База данных. CRUD для users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подключена База данных. CRUD для users" />
+    <MESSAGE value="Фикс даты, хэширование пароля" />
+    <option name="LAST_COMMIT_MESSAGE" value="Фикс даты, хэширование пароля" />
   </component>
 </project>

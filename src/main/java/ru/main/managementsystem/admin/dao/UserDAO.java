@@ -46,15 +46,13 @@ public class UserDAO {
         String sql = "INSERT INTO users(username, password_hash, full_name, email, department_id, is_active, created_at) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?)";
 
-        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-
         System.out.println("Подготовка данных к записи");
         try (Connection conn = DB.getConnection()) {
             int departmentId = departmentDAO.getDepartmentIdByName(conn, user.getDepartmentName());
 
             try (PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 pstmt.setString(1, user.getUsername());
-                pstmt.setString(2, hashedPassword);
+                pstmt.setString(2, user.getPassword());
                 pstmt.setString(3, user.getFullName());
                 pstmt.setString(4, user.getEmail());
                 pstmt.setInt(5, departmentId);
@@ -77,8 +75,6 @@ public class UserDAO {
         String sql = "UPDATE users SET username = ?, password_hash = ?, full_name = ?, email = ?, " +
                 "department_id = ?, is_active = ? WHERE user_id = ?";
 
-        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-
         System.out.println("Подготовка данных к записи");
         try (Connection conn = DB.getConnection()) {
 
@@ -87,7 +83,7 @@ public class UserDAO {
             try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 System.out.println("Коннект открыт");
                 pstmt.setString(1, user.getUsername());
-                pstmt.setString(2, hashedPassword);
+                pstmt.setString(2, user.getPassword());
                 pstmt.setString(3, user.getFullName());
                 pstmt.setString(4, user.getEmail());
                 pstmt.setInt(5, departmentId);
@@ -117,6 +113,42 @@ public class UserDAO {
         }
 
         return emails;
+    }
+
+    public User authenticate(String username, String password) throws SQLException {
+        String sql = "SELECT * FROM users WHERE username = ?";
+
+        try (Connection conn = DB.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String storedHash = rs.getString("password_hash");
+                // Сравнение введенного пароля с хэшем из БД
+                if (BCrypt.checkpw(password, storedHash)) {
+
+                    String departmentName = departmentDAO.getDepartmentNameById(conn, rs.getInt("department_id"));
+
+                    if (rs.getBoolean("is_active")) {
+                        return new User(rs.getInt("user_id"),
+                                rs.getString("username"),
+                                rs.getString("password_hash"),
+                                rs.getString("full_name"),
+                                rs.getString("email"),
+                                departmentName,
+                                rs.getBoolean("is_active"),
+                                rs.getString("created_at"),
+                                rs.getString("last_login")
+                        );
+                    } else {
+                        throw new SecurityException("Аккаунт деактивирован");
+                    }
+                }
+            }
+            return null;
+        }
     }
 
 }

@@ -127,7 +127,7 @@ public class ViewFactory {
     }
 
     //окно после авторизации
-    public void showUsersWindow() {
+    public void showUserWindow() {
         FXMLLoader loader = null;
         Parent root;
         try {
@@ -159,4 +159,5 @@ public class ViewFactory {
     public void closeStage(Stage stage){
         stage.close();
     }
+
 }

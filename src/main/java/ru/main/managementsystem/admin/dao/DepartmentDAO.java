@@ -33,4 +33,14 @@ public class DepartmentDAO {
             return rs.next() ? rs.getInt(1) : -1;
         }
     }
+
+    public String getDepartmentNameById(Connection conn, int id) throws SQLException {
+        String sql = "SELECT name FROM departments WHERE department_id = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next() ? rs.getString("name") : "Не из отдела";
+        }
+    }
 }
