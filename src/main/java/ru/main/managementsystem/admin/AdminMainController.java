@@ -10,4 +10,6 @@ public class AdminMainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+    //ToDo удалить, если не нужно + fxml
 }

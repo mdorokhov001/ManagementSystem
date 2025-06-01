@@ -213,12 +213,56 @@
     -fx-stroke : #9ACBD0;
 }
 
-.orders .filter_lbl_container{
-
+.orders .top_panel{
+    -fx-spacing: 20;
 }
 
-.orders .filter_lbl_container Label {
-    -fx-label-padding: 5 20 0 20 0;
+.orders .top_panel Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+.orders .top_panel Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.orders .top_panel .clean_btn {
+    -fx-pref-width: 20;
+    -fx-pref-height: 17;
+}
+
+.orders .top_panel .clean_btn:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.orders .top_panel .filter_lbl {
+    -fx-font-size: 1.2em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.orders .top_panel .filter_fld{
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.orders .hbox{
+    -fx-spacing: 20;
+}
+
+.orders .vbox{
+    -fx-spacing: 20;
+}
+
+.orders .filter_lbl_name{
     -fx-font-size: 1.1em;
     -fx-alignment: center;
     -fx-pref-height: 27;
@@ -307,8 +351,9 @@
 
 .orders .table .column-header {
     -fx-font-size: 1em;
-    -fx-padding: 15; /* Отступы для заголовков */
     -fx-background-color: #48A6A7; /* Фон заголовков */
+    -fx-border: 2;
+    -fx-border-color: #FFFFFF;
 
 }
 
@@ -317,9 +362,9 @@
 }
 
 .orders .table .table-row-cell {
-    -fx-padding: 5; /* Отступы для ячеек */
     -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
     -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+    -fx-text-fill: #48A6A7;
 }
 
 .orders .table .table-row-cell:hover {

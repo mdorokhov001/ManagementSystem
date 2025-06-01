@@ -16,7 +16,7 @@ import java.io.IOException;
 public class ViewFactory {
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane usersView;
-    private AnchorPane ordersView;
+    private AnchorPane requestsView;
     private AnchorPane reportsView;
     private AnchorPane settingsView;
     private AnchorPane adminMainView;
@@ -58,17 +58,17 @@ public class ViewFactory {
     }
 
     //  Окно Админ-Заявки
-    public AnchorPane getOrdersView(){
-        if (ordersView == null){
+    public AnchorPane getRequestsView(){
+        if (requestsView == null){
             try{
-                ordersView = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/orders.fxml")).load();
-                System.out.println("Orders view загружен");
+                requestsView = new FXMLLoader(getClass().getResource("/ru/main/managementsystem/admin/requests.fxml")).load();
+                System.out.println("Requests view загружен");
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
 
-        return ordersView;
+        return requestsView;
     }
     //  Окно Админ-Отчеты
     public AnchorPane getReportsView(){

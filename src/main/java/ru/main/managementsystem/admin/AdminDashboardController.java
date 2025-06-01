@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 public class AdminDashboardController implements Initializable {
     public Label logoLabel;
     public Button usersButton;
-    public Button ordersButton;
+    public Button requestsButton;
     public Button reportsButton;
     public Button settingsButton;
     public Button logoutButton;
@@ -23,7 +23,7 @@ public class AdminDashboardController implements Initializable {
 
     private void addListeners(){
         usersButton.setOnAction(event -> onUsers());
-        ordersButton.setOnAction(event -> onOrders());
+        requestsButton.setOnAction(event -> onOrders());
         reportsButton.setOnAction(event -> onReports());
         settingsButton.setOnAction(event -> onSettingsButton());
     }

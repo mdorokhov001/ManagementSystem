@@ -142,9 +142,4 @@ public class UsersController implements Initializable {
             e.printStackTrace();
         }
     }
-
-    public List<String> getAllEmails(){
-        return userDAO.getAllEmails();
-    }
-
 }
