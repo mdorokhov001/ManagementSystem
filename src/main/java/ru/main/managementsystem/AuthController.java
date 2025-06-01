@@ -27,27 +27,22 @@ public class AuthController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loginButton.setOnAction(event -> onLogin());
         DB.initializeDatabase();
-
     }
 
     private void onLogin() {
         try {
-            // 1. Валидация ввода
             if (isNullOrEmpty(loginField.getText()) || isNullOrEmpty(passwordField.getText())) {
                 errorLabel.setText("Заполните все поля");
                 return;
             }
 
-            // 2. Подготовка данных
             String username = loginField.getText().trim();
             String password = passwordField.getText();
 
             try {
-                // 3. Аутентификация
                 User authenticatedUser = new UserDAO().authenticate(username, password);
 
                 if (authenticatedUser != null) {
-                    // 4. Успешная авторизация
                     Model model = Model.getInstance();
                     Stage currentStage = (Stage) errorLabel.getScene().getWindow();
 
@@ -63,7 +58,6 @@ public class AuthController implements Initializable {
                     errorLabel.setText("Неверные учётные данные");
                 }
             } finally {
-                // 5. Очистка пароля из памяти
                 password = "";
                 passwordField.clear();
             }

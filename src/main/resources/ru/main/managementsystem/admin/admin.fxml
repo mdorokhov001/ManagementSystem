@@ -9,6 +9,6 @@
         <fx:include source="admin_dashboard.fxml"/>
     </left>
     <center>
-        <fx:include source="admin_main.fxml"/>
+        <fx:include source="orders.fxml"/>
     </center>
 </BorderPane>

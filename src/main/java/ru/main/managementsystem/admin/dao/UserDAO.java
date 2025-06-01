@@ -151,4 +151,15 @@ public class UserDAO {
         }
     }
 
+    public boolean adminAccountExists() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM users WHERE username = 'admin'";
+
+        try (Connection conn = DB.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            return rs.next() && rs.getInt(1) > 0;
+        }
+    }
+
 }

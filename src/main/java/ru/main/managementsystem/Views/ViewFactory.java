@@ -16,7 +16,6 @@ import java.io.IOException;
 public class ViewFactory {
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane usersView;
-    private AnchorPane usersDialogView;
     private AnchorPane ordersView;
     private AnchorPane reportsView;
     private AnchorPane settingsView;

@@ -1,5 +1,8 @@
 package ru.main.managementsystem.DataBase;
 
+import ru.main.managementsystem.admin.dao.UserDAO;
+import ru.main.managementsystem.admin.entity.User;
+
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -29,6 +32,27 @@ public class DB {
         } catch (SQLException e) {
             System.err.println("Error initializing database: " + e.getMessage());
         }
+
+        try {
+            UserDAO userDao = new UserDAO();
+            if (!userDao.adminAccountExists()) {
+                createDefaultAdmin();
+            }
+        } catch (SQLException e) {
+            System.err.println("Ошибка при проверке администратора: " + e.getMessage());
+        }
+    }
+
+    private static void createDefaultAdmin() throws SQLException {
+        User admin = new User();
+        admin.setUsername("admin");
+        admin.setPassword("123");
+        admin.setActive(true);
+
+        UserDAO userDao = new UserDAO();
+        userDao.addUser(admin);
+
+        System.out.println("Создана учетная запись администратора по умолчанию");
     }
 
     public static Connection getConnection() throws SQLException {
