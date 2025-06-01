@@ -1,4 +1,4 @@
-package ru.main.managementsystem;
+package ru.main.managementsystem.admin.submenues;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

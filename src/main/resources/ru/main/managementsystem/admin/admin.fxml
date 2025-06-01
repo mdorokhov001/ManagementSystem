@@ -3,12 +3,12 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane fx:id="admin_parent" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml" fx:controller="ru.main.managementsystem.AdminController"
+            xmlns:fx="http://javafx.com/fxml" fx:controller="ru.main.managementsystem.admin.AdminController"
             >
     <left>
         <fx:include source="admin_dashboard.fxml"/>
     </left>
     <center>
-        <fx:include source="admin_main.fxml"/>
+        <fx:include source="orders.fxml"/>
     </center>
 </BorderPane>

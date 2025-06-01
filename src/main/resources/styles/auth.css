@@ -30,7 +30,9 @@
 }
 
 .login_form_container .error_lbl{
-    -fx-font-size: 1em;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #EC607D;
+
 }
 
 .login_form_container .logo_lbl{

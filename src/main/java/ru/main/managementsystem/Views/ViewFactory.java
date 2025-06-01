@@ -7,8 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import ru.main.managementsystem.AdminController;
-import ru.main.managementsystem.UsersController;
+import ru.main.managementsystem.admin.AdminController;
+import ru.main.managementsystem.admin.submenues.UsersController;
 
 import java.io.IOException;
 
@@ -20,6 +20,7 @@ public class ViewFactory {
     private AnchorPane reportsView;
     private AnchorPane settingsView;
     private AnchorPane adminMainView;
+
 
     public ViewFactory(){
         this.adminSelectedMenuItem = new SimpleStringProperty("");
@@ -125,7 +126,7 @@ public class ViewFactory {
     }
 
     //окно после авторизации
-    public void showUsersWindow() {
+    public void showUserWindow() {
         FXMLLoader loader = null;
         Parent root;
         try {
@@ -157,4 +158,5 @@ public class ViewFactory {
     public void closeStage(Stage stage){
         stage.close();
     }
+
 }

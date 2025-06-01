@@ -60,11 +60,10 @@
 .users .top_panel Button{
     -fx-background-color : #48A6A7;
     -fx-text-fill: #FFFFFF;
-    -fx-pref-width: 120;
     -fx-pref-height: 20;
     -fx-font-size: 1.2em;
 }
-.users .top_panel Button : hover{
+.users .top_panel Button:hover{
     -fx-cursor: hand;
     -fx-background-color : #419596;
 }
@@ -74,7 +73,7 @@
     -fx-pref-height: 17;
 }
 
-.users .top_panel .clean_btn : hover{
+.users .top_panel .clean_btn:hover{
     -fx-cursor: hand;
     -fx-background-color : #419596;
 }
@@ -105,24 +104,97 @@
 
 .users .table .column-header {
     -fx-font-size: 1em;
-    -fx-padding: 15; /* Отступы для заголовков */
     -fx-background-color: #48A6A7; /* Фон заголовков */
-    -fx-pref-width: 152;
+    -fx-border: 2;
+    -fx-border-color: #FFFFFF;
 }
 
 .users .table .column-header .label{
     -fx-text-fill: #FFFFFF;
 }
 
-
 .users .table .table-row-cell {
-    -fx-padding: 5; /* Отступы для ячеек */
     -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
     -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+    -fx-text-fill: #48A6A7;
 }
 
 .users .table .table-row-cell:hover {
     -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}
+
+/* Диалоговое окно */
+.users_dialog{
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+}
+
+.users_dialog Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+.users_dialog Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.users_dialog PasswordField {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.users_dialog TextField{
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.users_dialog .name_form{
+    -fx-font-size: 1.3em;
+    -fx-text-fill: #006A71;
+}
+
+.users_dialog Label{
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #48A6A7;
+}
+
+.users_dialog ComboBox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-pref-width: 200;
+}
+
+.users_dialog CheckBox{
+    -fx-text-fill: #48A6A7;
+    -fx-font-size: 1em;
+}
+
+.users_dialog CheckBox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.users_dialog CheckBox:hover{
+    -fx-cursor: hand;
+}
+
+.users_dialog .error_label{
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #EC607D;
+    -fx-pref-width: 260;
 }
 
 /* Дашборд админа, экран заявки */
@@ -183,7 +255,7 @@
     -fx-background-color : #48A6A7;
 }
 
-.orders .filter_combobox: hover{
+.orders .filter_combobox:hover{
     -fx-cursor: hand;
     -fx-background-color : #48A6A7;
 }
@@ -199,7 +271,7 @@
     -fx-border: 1;
 }
 
-.orders .filter_checkbox: hover{
+.orders .filter_checkbox:hover{
     -fx-cursor: hand;
 }
 
@@ -260,7 +332,7 @@
     -fx-border: 1;
 }
 
-.orders .table .checkbox: hover{
+.orders .table .checkbox:hover{
     -fx-cursor: hand;
 }
 
@@ -312,7 +384,7 @@
     -fx-background-color : #48A6A7;
 }
 
-.reports .filter_combobox: hover{
+.reports .filter_combobox:hover{
     -fx-cursor: hand;
     -fx-background-color : #48A6A7;
 }
@@ -328,7 +400,7 @@
     -fx-border: 1;
 }
 
-.reports .filter_checkbox: hover{
+.reports .filter_checkbox:hover{
     -fx-cursor: hand;
 }
 
@@ -428,7 +500,7 @@
     -fx-border: 1;
 }
 
-.settings .roles .checkbox: hover{
+.settings .roles .checkbox:hover{
     -fx-cursor: hand;
 }
 
@@ -526,7 +598,7 @@
     -fx-border: 1;
 }
 
-.settings .sett_orders CheckBox: hover{
+.settings .sett_orders CheckBox:hover{
     -fx-cursor: hand;
 }
 
@@ -567,7 +639,7 @@
     -fx-border: 1;
 }
 
-.settings .reserve CheckBox: hover{
+.settings .reserve CheckBox:hover{
     -fx-cursor: hand;
 }
 
@@ -582,7 +654,7 @@
     -fx-border: 1;
 }
 
-.settings .reserve RadioButton: hover{
+.settings .reserve RadioButton:hover{
     -fx-cursor: hand;
 }
 
