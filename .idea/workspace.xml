@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Добавлена логика для экрана Заявки">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/RequestTypeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/StatusDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/Status.java" afterDir="false" />
+    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Фикс фильтров">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/AdminViewFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/UserViewFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/UserDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/submenues/AddRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/submenues/ReportsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/submenues/RequestsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/add_request.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/reports.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/requests.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/user.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/user_dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/user_dash.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/RequestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/RequestDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/Priority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/RequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/RequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/entity/RequestType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/RequestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/RequestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/requests.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/requests.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminMainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin_main.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +92,7 @@
       <recent name="ru.main.managementsystem.admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.main.managementsystem.Views" />
       <recent name="ru.main.managementsystem" />
     </key>
   </component>
@@ -191,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748793188863</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Фикс фильтров">
+      <option name="closed" value="true" />
+      <created>1748892817674</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748892817674</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,7 +224,8 @@
     <MESSAGE value="Добавлена авторизация через базу" />
     <MESSAGE value="Изменена главная форма при входе. Добавлено создание учетки админа, если база пуста" />
     <MESSAGE value="Добавлена логика для экрана Заявки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена логика для экрана Заявки" />
+    <MESSAGE value="Фикс фильтров" />
+    <option name="LAST_COMMIT_MESSAGE" value="Фикс фильтров" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

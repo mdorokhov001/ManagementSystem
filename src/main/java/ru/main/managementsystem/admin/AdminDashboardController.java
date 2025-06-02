@@ -30,18 +30,18 @@ public class AdminDashboardController implements Initializable {
 
     private void onUsers(){
         System.out.println("Кнопка нажата");
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Пользователи");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Пользователи");
     }
 
     private void onOrders(){
         System.out.println("Кнопка нажата");
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Заявки");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Заявки");
     }
     private void onReports(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Отчеты");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Отчеты");
     }
     private void onSettingsButton(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Настройки");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Настройки");
     }
 
 

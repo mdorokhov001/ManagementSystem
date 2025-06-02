@@ -1,0 +1,746 @@
+.menu{
+    -fx-background-color: #006A71;
+    -fx-font-family: "Trebuchet MS";
+}
+
+.menu .logo_container{
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+.menu .main_container{
+    -fx-spacing: 20;
+}
+
+.menu .logout_container{
+    -fx-spacing: 20;
+}
+
+.menu Button{
+    -fx-background-color : #006A71;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 180;
+    -fx-pref-height: 35;
+    -fx-font-size: 1.2em;
+}
+
+.menu Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #00555C;
+}
+
+.menu Label{
+    -fx-text-fill: #009CA5;
+    -fx-font-size: 1.3em;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+/* Дашборд админа, экран пользователи */
+.users {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+
+.users .top_panel{
+    -fx-spacing: 20;
+}
+
+/* Название экрана */
+.users .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.users .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.users .top_panel Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+.users .top_panel Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.users .top_panel .clean_btn {
+    -fx-pref-width: 20;
+    -fx-pref-height: 17;
+}
+
+.users .top_panel .clean_btn:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.users .top_panel .filter_lbl {
+    -fx-font-size: 1.2em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.users .top_panel .filter_fld{
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.users .table{
+    -fx-pref-width: 100%; /* Ширина таблицы */
+    -fx-padding: 0; /* Убираем отступы */
+    -fx-background-color: transparent; /* Фон таблицы */
+    -fx-border-color: #9ACBD0; /* Цвет рамки */
+    -fx-border-width: 20; /* Ширина рамки */
+}
+
+.users .table .column-header {
+    -fx-font-size: 1em;
+    -fx-background-color: #48A6A7; /* Фон заголовков */
+    -fx-border: 2;
+    -fx-border-color: #FFFFFF;
+}
+
+.users .table .column-header .label{
+    -fx-text-fill: #FFFFFF;
+}
+
+.users .table .table-row-cell {
+    -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
+    -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+    -fx-text-fill: #48A6A7;
+}
+
+.users .table .table-row-cell:hover {
+    -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}
+
+/* Диалоговое окно */
+.users_dialog{
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+}
+
+.users_dialog Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+.users_dialog Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.users_dialog PasswordField {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.users_dialog TextField{
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.users_dialog .name_form{
+    -fx-font-size: 1.3em;
+    -fx-text-fill: #006A71;
+}
+
+.users_dialog Label{
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #48A6A7;
+}
+
+.users_dialog ComboBox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-pref-width: 200;
+}
+
+.users_dialog CheckBox{
+    -fx-text-fill: #48A6A7;
+    -fx-font-size: 1em;
+}
+
+.users_dialog CheckBox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.users_dialog CheckBox:hover{
+    -fx-cursor: hand;
+}
+
+.users_dialog .error_label{
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #EC607D;
+    -fx-pref-width: 260;
+}
+
+/* Дашборд админа, экран заявки */
+.orders {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+/* Название экрана */
+.orders .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.orders .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.orders .top_panel{
+    -fx-spacing: 20;
+}
+
+.orders .top_panel Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+.orders .top_panel Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.orders .top_panel .clean_btn {
+    -fx-pref-width: 20;
+    -fx-pref-height: 17;
+}
+
+.orders .top_panel .clean_btn:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.orders .top_panel .filter_lbl {
+    -fx-font-size: 1.2em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.orders .top_panel .filter_fld{
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-pref-width: 200;
+    -fx-pref-height: 20;
+    -fx-font-size: 1.2em;
+}
+
+.orders .hbox{
+    -fx-spacing: 20;
+}
+
+.orders .vbox{
+    -fx-spacing: 20;
+}
+
+.orders .filter_lbl_name{
+    -fx-font-size: 1.1em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.orders .filter_container{
+    -fx-spacing: 15;
+}
+
+.orders .filter_fld{
+   /* -fx-background-color : #F2EFE7; */
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #48A6A7;
+    -fx-font-size: 1em;
+}
+
+.orders .filter_combobox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1em;
+
+}
+
+.orders .list-view {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #9ACBD0;
+    -fx-border: 2;
+    -fx-text-fill: #9ACBD0;
+}
+
+.orders .filter_combobox .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.orders .filter_combobox:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #48A6A7;
+}
+
+.orders .filter_checkbox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.orders .filter_checkbox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.orders .filter_checkbox:hover{
+    -fx-cursor: hand;
+}
+
+.orders .filter_datepicker{
+    -fx-border-color: #48A6A7;
+}
+
+.orders .filter_datepicker .box{
+        -fx-background-color : #F2EFE7;
+        -fx-text-fill: #FFFFFF;
+        -fx-font-size: 1em;
+}
+
+.orders .filter_datepicker .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.orders .filter_datepicker .arrow:hover{
+    -fx-cursor: hand;
+}
+
+.orders .vbox{
+   -fx-spacing: 10;
+}
+
+.orders .table{
+    -fx-pref-width: 100%; /* Ширина таблицы */
+    -fx-padding: 0; /* Убираем отступы */
+    -fx-background-color: transparent; /* Фон таблицы */
+    -fx-border-color: #9ACBD0; /* Цвет рамки */
+    -fx-border-width: 20; /* Ширина рамки */
+}
+
+.orders .table .column-header {
+    -fx-font-size: 1em;
+    -fx-background-color: #48A6A7; /* Фон заголовков */
+    -fx-border: 2;
+    -fx-border-color: #FFFFFF;
+
+}
+
+.orders .table .column-header .label{
+    -fx-text-fill: #FFFFFF;
+}
+
+.orders .table .table-row-cell {
+    -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
+    -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+    -fx-text-fill: #48A6A7;
+}
+
+.orders .table .table-row-cell:hover {
+    -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}
+
+.orders .table .checkbox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.orders .table .checkbox:hover{
+    -fx-cursor: hand;
+}
+
+
+/* Дашборд админа, экран отчеты */
+.reports {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+/* Название экрана */
+.reports .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.reports .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.reports .filter_lbl_container Label {
+    -fx-label-padding: 5 20 0 20 0;
+    -fx-font-size: 1.1em;
+    -fx-alignment: center;
+    -fx-pref-height: 27;
+    -fx-text-fill: #006A71;
+}
+
+.reports .filter_container{
+    -fx-spacing: 15;
+}
+
+.reports .filter_combobox{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1em;
+
+}
+
+.reports .list-view {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #9ACBD0;
+    -fx-border: 2;
+    -fx-text-fill: #9ACBD0;
+}
+
+.reports .filter_combobox .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.reports .filter_combobox:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #48A6A7;
+}
+
+.reports .filter_checkbox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.reports .filter_checkbox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.reports .filter_checkbox:hover{
+    -fx-cursor: hand;
+}
+
+.reports .filter_datepicker{
+    -fx-border-color: #48A6A7;
+}
+
+.reports .filter_datepicker .box{
+        -fx-background-color : #F2EFE7;
+        -fx-text-fill: #FFFFFF;
+        -fx-font-size: 1em;
+}
+
+.reports .filter_datepicker .arrow{
+    -fx-background-color : #48A6A7;
+}
+
+.reports .filter_datepicker .arrow:hover{
+    -fx-cursor: hand;
+}
+
+.reports .vbox{
+   -fx-spacing: 10;
+}
+
+.reports Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 160;
+    -fx-pref-height: 25;
+    -fx-font-size: 1em;
+}
+
+.reports Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+/* Дашборд админа, экран настройки */
+.settings {
+    -fx-background-color : #F2EFE7;
+    -fx-font-family: "Trebuchet MS";
+
+}
+/* Название экрана */
+.settings .top_panel .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.settings .tabpane_container {
+    -fx-font-size: 1em;
+    -fx-alignment: center;
+}
+
+.settings .tabpane_container .tab {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #52B4B5;
+    -fx-border-width: 1 1 1 1;
+    -fx-text-fill: #FFFFFF;
+}
+
+.settings .tabpane_container .tab:selected {
+    -fx-background-color : #F2EFE7;
+    -fx-border-color: #52B4B5;
+    -fx-border-width: 1 1 0 1;
+}
+
+.settings .tabpane_container .tab:hover {
+    -fx-cursor: hand;
+    -fx-background-color : #E1DBC8;
+}
+
+.settings .roles .name Label {
+    -fx-font-size: 15;
+    -fx-alignment: center;
+    -fx-text-fill: #006A71;
+}
+
+.settings .roles .container .listView{
+
+}
+
+.settings .roles Text{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.settings .roles .checkbox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.settings .roles .checkbox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.settings .roles .checkbox:hover{
+    -fx-cursor: hand;
+}
+
+.settings .roles Button{
+    -fx-background-color : #48A6A7;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 120;
+    -fx-pref-height: 25;
+    -fx-font-size: 1em;
+}
+
+.settings .roles Button:hover{
+    -fx-cursor: hand;
+    -fx-background-color : #419596;
+}
+
+.settings .sett_orders{
+    -fx-spacing: 20;
+}
+
+.settings .sett_orders .vbox{
+    -fx-spacing: 20;
+}
+
+.settings .sett_orders .hbox{
+    -fx-spacing: 20;
+}
+
+.settings .sett_orders .vbox .lbl{
+    -fx-font-size: 15;
+    -fx-alignment: center;
+    -fx-text-fill: #006A71;
+}
+
+.settings .sett_orders .table{
+    -fx-pref-width: 100%; /* Ширина таблицы */
+    -fx-padding: 0; /* Убираем отступы */
+    -fx-background-color: transparent; /* Фон таблицы */
+    -fx-border-color: #9ACBD0; /* Цвет рамки */
+    -fx-border-width: 10; /* Ширина рамки */
+}
+
+.settings .sett_orders .table .column-header {
+    -fx-font-size: 1em;
+    -fx-padding: 5; /* Отступы для заголовков */
+    -fx-background-color: #48A6A7; /* Фон заголовков */
+    -fx-pref-width: 124;
+}
+
+.settings .sett_orders .table .column-header .label{
+    -fx-text-fill: #FFFFFF;
+}
+
+
+.settings .sett_orders .table .table-row-cell {
+    -fx-padding: 5; /* Отступы для ячеек */
+    -fx-border-color: transparent transparent #F2F8F8 transparent; /* Рамка снизу ячеек */
+    -fx-border-width: 0 0 5 0; /* Рамка только снизу ячеек */
+}
+
+.settings .sett_orders .table .table-row-cell:hover {
+    -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
+}
+
+.settings .sett_orders Button{
+     -fx-background-color : #48A6A7;
+     -fx-text-fill: #FFFFFF;
+     -fx-pref-width: 120;
+     -fx-pref-height: 25;
+     -fx-font-size: 1em;
+ }
+
+.settings .sett_orders Button:hover{
+     -fx-cursor: hand;
+     -fx-background-color : #419596;
+ }
+
+.settings .sett_orders TextField{
+     -fx-background-color : #F2EFE7;
+     -fx-border-color: #48A6A7;
+     -fx-text-fill: #48A6A7;
+     -fx-pref-width: 200;
+     -fx-pref-height: 20;
+     -fx-font-size: 1em;
+}
+
+.settings .sett_orders CheckBox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.settings .sett_orders CheckBox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.settings .sett_orders CheckBox:hover{
+    -fx-cursor: hand;
+}
+
+.settings .sett_orders .color_lbl{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1.2em;
+}
+
+.settings .sett_orders .color_picker{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+    -fx-text-fill: #FFFFFF;
+}
+
+.settings .reserve .vbox{
+    -fx-spacing: 20;
+}
+
+.settings .reserve .hbox{
+    -fx-spacing: 20;
+}
+
+.settings .reserve .name_lbl{
+    -fx-font-size: 15;
+    -fx-alignment: center;
+    -fx-text-fill: #006A71;
+}
+
+.settings .reserve CheckBox{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.settings .reserve CheckBox .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.settings .reserve CheckBox:hover{
+    -fx-cursor: hand;
+}
+
+.settings .reserve RadioButton{
+    -fx-text-fill: #006A71;
+    -fx-font-size: 1em;
+}
+
+.settings .reserve RadioButton .box{
+    -fx-background-color : #9ACBD0;
+    -fx-border-color: #48A6A7;
+    -fx-border: 1;
+}
+
+.settings .reserve RadioButton:hover{
+    -fx-cursor: hand;
+}
+
+.settings .reserve Button{
+     -fx-background-color : #48A6A7;
+     -fx-text-fill: #FFFFFF;
+     -fx-pref-width: 125;
+     -fx-pref-height: 25;
+     -fx-font-size: 1em;
+ }
+
+.settings .reserve Button:hover{
+     -fx-cursor: hand;
+     -fx-background-color : #419596;
+ }
+
+.settings .reserve .progressBtn{
+     -fx-background-color : #48A6A7;
+     -fx-text-fill: #FFFFFF;
+     -fx-pref-width: 400;
+     -fx-pref-height: 25;
+     -fx-font-size: 1em;
+ }
+
+.settings .reserve .progressBtn:hover{
+     -fx-cursor: hand;
+     -fx-background-color : #419596;
+ }
+
+ .settings .reserve .lbl{
+     -fx-font-size: 13;
+     -fx-alignment: center;
+     -fx-text-fill: #006A71;
+     -fx-pref-height: 25;
+ }
+
+ .settings .reserve TextField{
+      -fx-background-color : #F2EFE7;
+      -fx-border-color: #48A6A7;
+      -fx-text-fill: #48A6A7;
+      -fx-pref-width: 200;
+      -fx-pref-height: 20;
+      -fx-font-size: 1em;
+ }

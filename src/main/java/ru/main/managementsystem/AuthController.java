@@ -50,9 +50,9 @@ public class AuthController implements Initializable {
                     model.getViewFactory().closeStage(currentStage);
 
                     if (authenticatedUser.isAdmin()) {
-                        model.getViewFactory().showAdminWindow();
+                        model.getAdminViewFactory().showAdminWindow();
                     } else {
-                        model.getViewFactory().showAdminWindow(); // ToDo : user окно
+                        model.getUserViewFactory().showUserWindow();
                     }
                 } else {
                     errorLabel.setText("Неверные учётные данные");

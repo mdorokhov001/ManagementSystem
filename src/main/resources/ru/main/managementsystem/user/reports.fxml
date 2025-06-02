@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="reports"
+            stylesheets="@../../../../styles/user_dash.css" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.user.submenues.ReportsController">
+   <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <top>
+         <VBox prefHeight="180.0" prefWidth="800.0" styleClass="top_container" BorderPane.alignment="CENTER">
+            <HBox prefHeight="50.0" prefWidth="800.0" styleClass="top_panel">
+               <Label styleClass="name_form" text="Отчеты">
+                  <HBox.margin>
+                     <Insets left="20.0" top="18.0" />
+                  </HBox.margin>
+               </Label>
+            </HBox>
+            <Line endX="699.0" startX="-100.0" styleClass="line" />
+            <HBox prefHeight="35.0" prefWidth="800.0" styleClass="filter_lbl_container">
+               <Label text="Тип отчета">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Label>
+               <Label text="Период">
+                  <HBox.margin>
+                     <Insets left="95.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="Группировка">
+                  <HBox.margin>
+                     <Insets left="80.0" />
+                  </HBox.margin>
+               </Label>
+               <Label text="Экспорт">
+                  <HBox.margin>
+                     <Insets left="80.0" />
+                  </HBox.margin>
+               </Label>
+            </HBox>
+            <HBox prefHeight="88.0" prefWidth="800.0" styleClass="filter_container">
+               <VBox prefHeight="88.0" prefWidth="186.0" styleClass="vbox">
+                  <CheckBox fx:id="statisticCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="Статистика по заявкам" />
+                  <CheckBox fx:id="loadCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="Нагрузка на сотрудников" />
+                  <CheckBox fx:id="analyticsCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="Анализ сроков" />
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="150.0" styleClass="vbox">
+                  <DatePicker fx:id="dateFrom" promptText="От" styleClass="filter_datepicker" />
+                  <DatePicker fx:id="dateTo" promptText="До" styleClass="filter_datepicker">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </DatePicker>
+               </VBox>
+               <VBox prefHeight="88.0" prefWidth="163.0" styleClass="vbox">
+                  <ComboBox fx:id="groupCombobox" prefWidth="160.0" styleClass="filter_combobox"/>
+                  <Button fx:id="refreshButton" mnemonicParsing="false" text="Обновить данные">
+                     <VBox.margin>
+                        <Insets top="20.0"/>
+                     </VBox.margin>
+                  </Button>
+               </VBox>
+               <VBox prefHeight="88.0" prefWidth="218.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="218.0" styleClass="vbox">
+                     <CheckBox fx:id="pdfCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="PDF"/>
+                     <CheckBox fx:id="excelCheckbox" mnemonicParsing="false" styleClass="filter_checkbox"
+                               text="Excel"/>
+                     <CheckBox fx:id="htmlCheckbox" mnemonicParsing="false" styleClass="filter_checkbox"
+                               text="HTML"/>
+                  </HBox>
+                  <Button fx:id="generateButton" mnemonicParsing="false" text="Сгенерировать">
+                     <VBox.margin>
+                        <Insets left="30.0" top="28.0"/>
+                     </VBox.margin>
+                  </Button>
+               </VBox>
+            </HBox>
+         </VBox>
+      </top>
+      <center>
+         
+      </center>
+      <center>
+         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AreaChart fx:id="areaChart" prefHeight="420.0" prefWidth="400.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM"/>
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT"/>
+               </yAxis>
+            </AreaChart>
+            <PieChart fx:id="pieChart" prefHeight="420.0" prefWidth="400.0"/>
+         </HBox>
+      </center>
+   </BorderPane>
+</AnchorPane>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="600.0" prefWidth="950.0" styleClass="orders" stylesheets="@../../../../styles/user_dash.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.main.managementsystem.user.submenues.RequestsController">
+   <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <top>
+         <VBox prefHeight="180.0" prefWidth="800.0" styleClass="vbox" BorderPane.alignment="CENTER">
+            <HBox prefHeight="50.0" prefWidth="800.0" styleClass="top_panel">
+               <Label styleClass="name_form" text="Мои заявки">
+                  <HBox.margin>
+                     <Insets left="20.0" top="18.0" />
+                  </HBox.margin>
+               </Label>
+            </HBox>
+            <Line endX="849.0" startX="-100.0" styleClass="line" />
+            <HBox prefHeight="60.0" prefWidth="200.0" styleClass="top_panel">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <Button mnemonicParsing="false"  styleClass="clean_btn">
+                  <graphic>
+                     <ImageView fx:id="refreshButton" fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../../../icons/refresh.png" />
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button fx:id="viewRequestButton" mnemonicParsing="false"  text="Посмотреть заявку" />
+               <Button fx:id="addButton" mnemonicParsing="false"  text="Добавить" />
+               <Button fx:id="editButton" mnemonicParsing="false"  text="Редактировать" />
+               <Button fx:id="deleteButton" mnemonicParsing="false"  text="Удалить" />
+            </HBox>
+            <HBox prefHeight="88.0" prefWidth="800.0" styleClass="hbox">
+               <VBox prefHeight="200.0" prefWidth="80.0" styleClass="vbox">
+                  <Label styleClass="filter_lbl_name" text="Статус" />
+                  <CheckBox fx:id="openCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="Открыта" />
+                  <CheckBox fx:id="inProgressCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="В работе" />
+                  <CheckBox fx:id="closedCheckbox" mnemonicParsing="false" styleClass="filter_checkbox" text="Закрыта" />
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="150.0" styleClass="vbox">
+                  <Label styleClass="filter_lbl_name" text="Дата создания" />
+                  <DatePicker fx:id="dateFrom" promptText="От" styleClass="filter_datepicker" />
+                  <DatePicker fx:id="dateTo" promptText="До" styleClass="filter_datepicker">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </DatePicker>
+               </VBox>
+               <VBox>
+                  <Label styleClass="filter_lbl_name" text="Ответственный" />
+                  <ComboBox fx:id="assigneeCombobox" prefWidth="160.0" styleClass="filter_combobox" />
+                  <Label styleClass="filter_lbl_name" text="Тип заявки">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="requestTypeCombobox" prefWidth="160.0" styleClass="filter_combobox">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                  </ComboBox>
+               </VBox>
+               <VBox prefHeight="106.0" prefWidth="465.0">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+                  <children>
+                     <HBox fillHeight="false" styleClass="top_panel">
+                        <Label styleClass="filter_lbl" text="Поиск:" />
+                        <TextField fx:id="searchField" styleClass="filter_fld" />
+                        <Button fx:id="cleanButton" mnemonicParsing="false"  styleClass="clean_btn">
+                           <graphic>
+                              <ImageView fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <Image url="@../../../../icons/clean.png" />
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <VBox.margin>
+                           <Insets top="20.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <Label styleClass="filter_lbl_name" text="Приоритет">
+                        <VBox.margin>
+                           <Insets top="2.0" />
+                        </VBox.margin>
+                     </Label>
+                     <ComboBox fx:id="priorityCombobox" prefWidth="160.0" styleClass="filter_combobox">
+                        <VBox.margin>
+                           <Insets top="2.0" />
+                        </VBox.margin>
+                     </ComboBox>
+                  </children>
+               </VBox>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </VBox>
+      </top>
+      <center>
+         <TableView fx:id="requestsTable" prefHeight="408.0" prefWidth="800.0" styleClass="table" BorderPane.alignment="CENTER">
+            <columns>
+               <TableColumn fx:id="idColumn" prefWidth="50.0" text="№">
+                  <cellValueFactory><PropertyValueFactory property="request_id" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="242.0" text="Название">
+                  <cellValueFactory><PropertyValueFactory property="title" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="106.0" text="Тип">
+                  <cellValueFactory><PropertyValueFactory property="request_type" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="74.0" text="Статус">
+                  <cellValueFactory><PropertyValueFactory property="status" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="priorityColumn" minWidth="0.0" prefWidth="92.0" text="Приоритет">
+                  <cellValueFactory><PropertyValueFactory property="priority" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="createdByColumn" minWidth="0.0" prefWidth="106.0" text="Создатель">
+                  <cellValueFactory><PropertyValueFactory property="createdBy" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="assignedByColumn" minWidth="0.0" prefWidth="123.0" text="Ответственный">
+                  <cellValueFactory><PropertyValueFactory property="assignedTo" /></cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="createdAtColumn" minWidth="0.0" prefWidth="118.0" text="Дата создания">
+                  <cellValueFactory><PropertyValueFactory property="createdAt" /></cellValueFactory>
+               </TableColumn>
+            </columns>
+         </TableView>
+      </center>
+   </BorderPane>
+</AnchorPane>
