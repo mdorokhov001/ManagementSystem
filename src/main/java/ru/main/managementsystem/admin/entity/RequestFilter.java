@@ -5,11 +5,11 @@ import java.util.Set;
 
 public record RequestFilter (
         String searchText,
-        String type,
+        RequestType type,
         Set<String> statuses,
         LocalDate fromDate,
         LocalDate toDate,
         Integer assignedTo,
-        String priority
+        Priority priority
 )  {
 }

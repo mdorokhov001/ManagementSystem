@@ -2,15 +2,15 @@ package ru.main.managementsystem.admin.entity;
 
 import javafx.beans.property.*;
 
-public class RequestType {
+public class Status {
     private final IntegerProperty id;
     private final StringProperty name;
-    private final StringProperty description;
+    private final BooleanProperty isFinal;
 
-    public RequestType(int id, String name, String description) {
+    public Status(int id, String name, boolean isFinal) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
-        this.description = new SimpleStringProperty(description);
+        this.isFinal = new SimpleBooleanProperty(isFinal);
     }
 
     public int getId() {
@@ -37,22 +37,15 @@ public class RequestType {
         this.name.set(name);
     }
 
-    public String getDescription() {
-        return description.get();
+    public boolean isIsFinal() {
+        return isFinal.get();
     }
 
-    public StringProperty descriptionProperty() {
-        return description;
+    public BooleanProperty isFinalProperty() {
+        return isFinal;
     }
 
-    public void setDescription(String description) {
-        this.description.set(description);
-    }
-
-
-    @Override
-    public String toString() {
-        return name.get();
-
+    public void setIsFinal(boolean isFinal) {
+        this.isFinal.set(isFinal);
     }
 }

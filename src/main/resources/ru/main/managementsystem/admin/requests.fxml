@@ -87,9 +87,9 @@
                      <HBox fillHeight="false" styleClass="top_panel">
                         <Label styleClass="filter_lbl" text="Поиск:" />
                         <TextField fx:id="searchField" styleClass="filter_fld" />
-                        <Button mnemonicParsing="false" styleClass="clean_btn">
+                        <Button fx:id="cleanButton" mnemonicParsing="false" onAction="#handleClean" styleClass="clean_btn">
                            <graphic>
-                              <ImageView fx:id="cleanButton" fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
                                  <Image url="@../../../../icons/clean.png" />
                               </ImageView>
                            </graphic>

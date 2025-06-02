@@ -8,11 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
 import ru.main.managementsystem.admin.dao.RequestDAO;
+import ru.main.managementsystem.admin.dao.RequestTypeDAO;
+import ru.main.managementsystem.admin.dao.StatusDAO;
 import ru.main.managementsystem.admin.dao.UserDAO;
-import ru.main.managementsystem.admin.entity.Request;
-import ru.main.managementsystem.admin.entity.RequestFilter;
-import ru.main.managementsystem.admin.entity.RequestType;
-import ru.main.managementsystem.admin.entity.User;
+import ru.main.managementsystem.admin.entity.*;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -39,16 +38,18 @@ public class RequestsController implements Initializable {
     @FXML public DatePicker dateTo;
     // Списки
     @FXML public ComboBox<User> assigneeCombobox;
-    @FXML public ComboBox<String> requestTypeCombobox;
-    @FXML public ComboBox<String> priorityCombobox;
+    @FXML public ComboBox<RequestType> requestTypeCombobox;
+    @FXML public ComboBox<Priority> priorityCombobox;
     // Поиск
     @FXML public TextField searchField;
-    @FXML public ImageView cleanButton;
+    @FXML public Button cleanButton;
     // Таблица
     @FXML public TableView<Request> requestsTable;
 
     private final RequestDAO requestDao = new RequestDAO();
     private final UserDAO userDao = new UserDAO();
+    private final RequestTypeDAO requestTypeDao = new RequestTypeDAO();
+    private final StatusDAO statusDao = new StatusDAO();
 
 
     @Override
@@ -64,7 +65,7 @@ public class RequestsController implements Initializable {
                 .stream().filter(c -> "createdAtColumn".equals(c.getId())).findFirst().orElseThrow();
 
         createdAtCol.setCellFactory(column -> new TableCell<>() {
-            private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSS");
+            private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
             @Override
             protected void updateItem(LocalDateTime item, boolean empty) {
@@ -96,16 +97,26 @@ public class RequestsController implements Initializable {
     private void loadInitialData() {
         try {
             // Загрузка типов заявок
-            requestTypeCombobox.getItems().setAll("Обслуживание", "Дизайн", "Доставка"); // ToDO Взять данные из таблицы
+            requestTypeCombobox.setConverter(new StringConverter<>() {
+                @Override
+                public String toString(RequestType type) {
+                    return type == null ? "" : type.getName();
+                }
+                @Override
+                public RequestType fromString(String string) {
+                    return null;
+                }
+            });
+            requestTypeCombobox.getItems().setAll(requestTypeDao.getAllRequestTypes());
 
             // Загрузка приоритетов
-            priorityCombobox.getItems().setAll("Высокий", "Средний", "Низкий");
+            priorityCombobox.getItems().setAll(Priority.values());
 
             // Загрузка ответственных
             assigneeCombobox.setConverter(new StringConverter<>() {
                 @Override
                 public String toString(User user) {
-                    return user == null ? "Не назначено" : user.getFullName();
+                    return user == null ? "" : user.getFullName();
                 }
 
                 @Override
@@ -149,6 +160,7 @@ public class RequestsController implements Initializable {
     }
 
     public void handleRefresh(ActionEvent actionEvent) {
+        refreshRequests();
     }
 
     public void hadleViewRequest(ActionEvent actionEvent) {
@@ -161,6 +173,23 @@ public class RequestsController implements Initializable {
     }
 
     public void handleDeleteUser(ActionEvent actionEvent) {
+    }
+
+    public void handleClean(ActionEvent actionEvent) {
+        System.out.println("handleClean pressed");
+        inProgressCheckbox.setSelected(false);
+        openCheckbox.setSelected(false);
+        closedCheckbox.setSelected(false);
+
+        dateFrom.setValue(null);
+        dateTo.setValue(null);
+
+        assigneeCombobox.setValue(null);
+        requestTypeCombobox.setValue(null);
+        priorityCombobox.setValue(null);
+
+        searchField.setText("");
+        refreshRequests();
     }
 
 

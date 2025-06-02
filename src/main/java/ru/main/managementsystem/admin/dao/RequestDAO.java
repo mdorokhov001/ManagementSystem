@@ -1,18 +1,12 @@
 package ru.main.managementsystem.admin.dao;
 
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import ru.main.managementsystem.DataBase.DB;
-import ru.main.managementsystem.admin.entity.Request;
-import ru.main.managementsystem.admin.entity.RequestFilter;
-import ru.main.managementsystem.admin.entity.RequestType;
-import ru.main.managementsystem.admin.entity.User;
+import ru.main.managementsystem.admin.entity.*;
 
 import java.sql.*;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class RequestDAO {
@@ -31,16 +25,25 @@ public class RequestDAO {
                             rs.getInt("request_id"),
                             rs.getString("title"),
                             rs.getString("description"),
-                            rs.getString("request_type"), // ToDo из другой таблицы
+                            new RequestType(
+                                    rs.getInt("type_id"),
+                                    rs.getString("type_name"),
+                                    rs.getString("type_description")
+                            ),
                             rs.getString("status"),
-                            rs.getString("priority"),
-                            rs.getString("created_by"), // ToDo из другой таблицы
-                            rs.getString("assigned_to"), // ToDo из другой таблицы
+                            Priority.fromCode(rs.getInt("priority")),
+                            rs.getString("created_by"),
+                            rs.getString("assigned_to"),
                             rs.getString("created_at"),
+                           // rs.getString("created_at"),
                             rs.getString("updated_at")
                     );
+                    System.out.println(request);
                     requests.add(request);
                 }
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
         return requests;
@@ -48,7 +51,8 @@ public class RequestDAO {
 
     private String buildFilterQuery(RequestFilter filter) {
         return """
-            SELECT r.request_id, r.title, r.description, rt.type_name as request_type,
+            SELECT r.request_id, r.title, r.description, rt.type_id as type_id,
+                   rt.type_name as type_name, rt.description as type_description,
                    rs.status_name as status, r.priority,
                    uc.full_name as created_by, ua.full_name as assigned_to,
                    r.created_at, r.updated_at
@@ -58,16 +62,18 @@ public class RequestDAO {
             JOIN users uc ON r.created_by = uc.user_id
             LEFT JOIN users ua ON r.assigned_to = ua.user_id
             WHERE 1=1
-            """ + buildWhereClause(filter) + """
-            ORDER BY
-                CASE WHEN rs.status_name = 'Открыта' THEN 1
-                     WHEN rs.status_name = 'В работе' THEN 2
-                     ELSE 3 END,
-                CASE WHEN r.priority = 'Высокий' THEN 1
-                     WHEN r.priority = 'Средний' THEN 2
-                     ELSE 3 END,
-                r.created_at DESC
-            """;
+            """ + buildWhereClause(filter)
+//        """
+//             ORDER BY
+//                CASE WHEN rs.status_name = 'Открыта' THEN 1
+//                     WHEN rs.status_name = 'В работе' THEN 2
+//                     ELSE 3 END,
+//                CASE WHEN r.priority = 'Высокий' THEN 1
+//                     WHEN r.priority = 'Средний' THEN 2
+//                     ELSE 3 END,
+//                r.created_at DESC
+//            """
+                ;
     }
 
     private String buildWhereClause(RequestFilter filter) {
@@ -91,7 +97,7 @@ public class RequestDAO {
             where.append(" AND r.created_at <= ?");
         }
         if (filter.assignedTo() != null) {
-            where.append(" AND r.assigned_to = ?");
+            where.append(" AND ua.user_id = ?");
         }
         if (filter.priority() != null) {
             where.append(" AND r.priority = ?");
@@ -103,30 +109,43 @@ public class RequestDAO {
 
     private void setFilterParameters(PreparedStatement pstmt, RequestFilter filter) throws SQLException {
         int paramIndex = 1;
-
+        System.out.println("setFilterParameters starts...");
         if (!filter.searchText().isEmpty()) {
             String searchPattern = "%" + filter.searchText() + "%";
             pstmt.setString(paramIndex++, searchPattern);
             pstmt.setString(paramIndex++, searchPattern);
+            System.out.println("searchPattern: " + searchPattern);
         }
         if (filter.type() != null) {
-            pstmt.setString(paramIndex++, filter.type());
+            pstmt.setString(paramIndex++, String.valueOf(filter.type()));
+            System.out.println("String.valueOf(filter.type()): " + filter.type());
         }
         for (String status : filter.statuses()) {
             pstmt.setString(paramIndex++, status);
+            System.out.println("status: " + status);
         }
         if (filter.fromDate() != null) {
-            pstmt.setTimestamp(paramIndex++, Timestamp.valueOf(filter.fromDate().atStartOfDay()));
+            pstmt.setString(paramIndex++, String.valueOf(filter.fromDate().atStartOfDay()));
+
+            System.out.println("fromDate(): " + String.valueOf(filter.fromDate().atStartOfDay()));
         }
         if (filter.toDate() != null) {
-            pstmt.setTimestamp(paramIndex++, Timestamp.valueOf(filter.toDate().atTime(LocalTime.MAX)));
+            pstmt.setString(paramIndex++, String.valueOf(filter.toDate().atTime(LocalTime.MAX)));
+
+            System.out.println("toDate(): " + String.valueOf(filter.toDate().atTime(LocalTime.MAX)));
         }
         if (filter.assignedTo() != null) {
             pstmt.setInt(paramIndex++, filter.assignedTo());
+            System.out.println("assignedTo: " + filter.assignedTo());
         }
         if (filter.priority() != null) {
-            pstmt.setString(paramIndex++, filter.priority());
+            pstmt.setInt(paramIndex++, filter.priority().getCode());
+            System.out.println("priority: " + filter.priority().getCode());
         }
+
+        System.out.println(pstmt);
+
+        System.out.println("setFilterParameters ends...");
     }
 
 }

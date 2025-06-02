@@ -10,9 +10,9 @@ public class Request {
     private final IntegerProperty request_id;
     private final StringProperty title;
     private final StringProperty description;
-    private final StringProperty request_type;
+    private final SimpleObjectProperty<RequestType> request_type;
     private final StringProperty status;
-    private final StringProperty priority;
+    private final SimpleObjectProperty<Priority> priority;
     private final StringProperty createdBy;
     private final StringProperty assignedTo;
     private final SimpleObjectProperty<LocalDateTime> createdAt;
@@ -22,23 +22,23 @@ public class Request {
         this.request_id = new SimpleIntegerProperty(0);
         this.title = new SimpleStringProperty("Пустая заявка");
         this.description = new SimpleStringProperty("");
-        this.request_type = new SimpleStringProperty("");
+        this.request_type = new SimpleObjectProperty<>();
         this.status = new SimpleStringProperty("");
-        this.priority = new SimpleStringProperty("");
+        this.priority = new SimpleObjectProperty<>();
         this.createdBy = new SimpleStringProperty("");
         this.assignedTo = new SimpleStringProperty("");
         this.createdAt = new SimpleObjectProperty<>(LocalDateTime.now());
-        this.updatedAt = new SimpleObjectProperty<>(null);
+        this.updatedAt = new SimpleObjectProperty<>();
     }
 
-    public Request(int requestId, String title, String description, String requestType, String status, String priority,
+    public Request(int requestId, String title, String description, RequestType requestType, String status, Priority priority,
                    String createdBy, String assignedTo, String createdAt, String updatedAt) {
         this.request_id = new SimpleIntegerProperty(requestId);
         this.title = new SimpleStringProperty(title);
         this.description = new SimpleStringProperty(description);
-        this.request_type = new SimpleStringProperty(requestType);
+        this.request_type = new SimpleObjectProperty<>(requestType);
         this.status = new SimpleStringProperty(status);
-        this.priority = new SimpleStringProperty(priority);
+        this.priority = new SimpleObjectProperty<>(priority);
         this.createdBy = new SimpleStringProperty(createdBy);
         this.assignedTo = new SimpleStringProperty(assignedTo);
         this.createdAt = new SimpleObjectProperty<>(convertDate(createdAt));
@@ -95,15 +95,15 @@ public class Request {
         this.description.set(description);
     }
 
-    public String getRequest_type() {
+    public RequestType getRequest_type() {
         return request_type.get();
     }
 
-    public StringProperty request_typeProperty() {
+    public SimpleObjectProperty<RequestType> request_typeProperty() {
         return request_type;
     }
 
-    public void setRequest_type(String request_type) {
+    public void setRequest_type(RequestType request_type) {
         this.request_type.set(request_type);
     }
 
@@ -119,15 +119,15 @@ public class Request {
         this.status.set(status);
     }
 
-    public String getPriority() {
+    public Priority getPriority() {
         return priority.get();
     }
 
-    public StringProperty priorityProperty() {
+    public SimpleObjectProperty<Priority> priorityProperty() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Priority priority) {
         this.priority.set(priority);
     }
 
@@ -177,5 +177,22 @@ public class Request {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt.set(updatedAt);
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Request[request_id=%d, title='%s', description='%s', request_type=%s, status='%s', priority=%s, createdBy='%s', assignedTo='%s', createdAt=%s, updatedAt=%s]",
+                request_id.get(),
+                title.get(),
+                description.get(),
+                request_type.get(),
+                status.get(),
+                priority.get(),
+                createdBy.get(),
+                assignedTo.get(),
+                createdAt.get(),
+                updatedAt.get()
+        );
     }
 }
