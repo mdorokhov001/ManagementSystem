@@ -18,9 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="600.0" prefWidth="950.0" styleClass="orders" stylesheets="@../../../../styles/user_dash.css"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ru.main.managementsystem.user.submenues.RequestsController">
+<AnchorPane prefHeight="600.0" prefWidth="950.0" styleClass="orders" stylesheets="@../../../../styles/user_dash.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.user.submenues.RequestsController">
    <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="main_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <top>
          <VBox prefHeight="180.0" prefWidth="800.0" styleClass="vbox" BorderPane.alignment="CENTER">
@@ -36,17 +34,16 @@
                <VBox.margin>
                   <Insets left="20.0" />
                </VBox.margin>
-               <Button mnemonicParsing="false"  styleClass="clean_btn">
+               <Button mnemonicParsing="false" styleClass="clean_btn">
                   <graphic>
                      <ImageView fx:id="refreshButton" fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
                         <Image url="@../../../../icons/refresh.png" />
                      </ImageView>
                   </graphic>
                </Button>
-               <Button fx:id="viewRequestButton" mnemonicParsing="false"  text="Посмотреть заявку" />
-               <Button fx:id="addButton" mnemonicParsing="false"  text="Добавить" />
-               <Button fx:id="editButton" mnemonicParsing="false"  text="Редактировать" />
-               <Button fx:id="deleteButton" mnemonicParsing="false"  text="Удалить" />
+               <Button fx:id="viewRequestButton" mnemonicParsing="false" text="Посмотреть заявку" />
+               <Button fx:id="editButton" mnemonicParsing="false" text="Редактировать" />
+               <Button fx:id="deleteButton" mnemonicParsing="false" text="Удалить" />
             </HBox>
             <HBox prefHeight="88.0" prefWidth="800.0" styleClass="hbox">
                <VBox prefHeight="200.0" prefWidth="80.0" styleClass="vbox">
@@ -89,7 +86,7 @@
                      <HBox fillHeight="false" styleClass="top_panel">
                         <Label styleClass="filter_lbl" text="Поиск:" />
                         <TextField fx:id="searchField" styleClass="filter_fld" />
-                        <Button fx:id="cleanButton" mnemonicParsing="false"  styleClass="clean_btn">
+                        <Button fx:id="cleanButton" mnemonicParsing="false" styleClass="clean_btn">
                            <graphic>
                               <ImageView fitHeight="15.0" pickOnBounds="true" preserveRatio="true">
                                  <Image url="@../../../../icons/clean.png" />
@@ -127,25 +124,24 @@
                <TableColumn fx:id="idColumn" prefWidth="50.0" text="№">
                   <cellValueFactory><PropertyValueFactory property="request_id" /></cellValueFactory>
                </TableColumn>
-               <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="242.0" text="Название">
+               <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="310.0" text="Название">
                   <cellValueFactory><PropertyValueFactory property="title" /></cellValueFactory>
                </TableColumn>
-               <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="106.0" text="Тип">
+               <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="111.0" text="Тип">
                   <cellValueFactory><PropertyValueFactory property="request_type" /></cellValueFactory>
                </TableColumn>
-               <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="74.0" text="Статус">
-                  <cellValueFactory><PropertyValueFactory property="status" /></cellValueFactory>
+               <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="101.0" text="Статус">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="status" />
+                  </cellValueFactory>
                </TableColumn>
                <TableColumn fx:id="priorityColumn" minWidth="0.0" prefWidth="92.0" text="Приоритет">
                   <cellValueFactory><PropertyValueFactory property="priority" /></cellValueFactory>
                </TableColumn>
-               <TableColumn fx:id="createdByColumn" minWidth="0.0" prefWidth="106.0" text="Создатель">
-                  <cellValueFactory><PropertyValueFactory property="createdBy" /></cellValueFactory>
-               </TableColumn>
-               <TableColumn fx:id="assignedByColumn" minWidth="0.0" prefWidth="123.0" text="Ответственный">
+               <TableColumn fx:id="assignedByColumn" minWidth="0.0" prefWidth="117.0" text="Ответственный">
                   <cellValueFactory><PropertyValueFactory property="assignedTo" /></cellValueFactory>
                </TableColumn>
-               <TableColumn fx:id="createdAtColumn" minWidth="0.0" prefWidth="118.0" text="Дата создания">
+               <TableColumn fx:id="createdAtColumn" minWidth="0.0" prefWidth="128.0" text="Дата создания">
                   <cellValueFactory><PropertyValueFactory property="createdAt" /></cellValueFactory>
                </TableColumn>
             </columns>

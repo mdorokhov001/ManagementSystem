@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Фикс фильтров">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/AdminViewFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/UserViewFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/UserDashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/submenues/AddRequestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/submenues/ReportsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/user/submenues/RequestsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/add_request.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/reports.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/requests.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/user.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/user_dashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/user_dash.css" afterDir="false" />
+    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Подключены формы для USER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/AdminMainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin_main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/ReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/ReportsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/add_request.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/add_request.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/requests.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/requests.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/user_dash.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/user_dash.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748892817674</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Подключены формы для USER">
+      <option name="closed" value="true" />
+      <created>1748897084749</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748897084749</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Подключены формы для USER">
+      <option name="closed" value="true" />
+      <created>1748897106819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748897106819</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,7 +224,8 @@
     <MESSAGE value="Изменена главная форма при входе. Добавлено создание учетки админа, если база пуста" />
     <MESSAGE value="Добавлена логика для экрана Заявки" />
     <MESSAGE value="Фикс фильтров" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фикс фильтров" />
+    <MESSAGE value="Подключены формы для USER" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подключены формы для USER" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

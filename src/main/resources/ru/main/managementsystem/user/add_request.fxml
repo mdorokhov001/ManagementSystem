@@ -5,7 +5,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,61 +13,76 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="360.0" prefWidth="400.0" styleClass="users_dialog"
-            stylesheets="@../../../../styles/user_dash.css" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.user.submenues.AddRequestController">
+<AnchorPane prefHeight="600.0" prefWidth="950.0" styleClass="add_request" stylesheets="@../../../../styles/user_dash.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.main.managementsystem.user.submenues.AddRequestController">
    <BorderPane prefHeight="392.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
-         <GridPane hgap="50.0" prefHeight="295.0" prefWidth="345.0" vgap="15.0" BorderPane.alignment="CENTER">
-      
-            <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-      
-            <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <PasswordField fx:id="passField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      
-            <Label text="Отдел:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <ComboBox fx:id="departmentDropbox" prefHeight="29.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      
-            <Label text="ФИО:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <TextField fx:id="fullNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      
-            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      
-            <CheckBox fx:id="closeAfterSaveCheckBox" text="Закрыть форму после сохранения" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-      
-            <HBox spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6">
-               <Button fx:id="saveButton"  text="Сохранить">
-                  <HBox.margin>
-                     <Insets left="60.0" />
-                  </HBox.margin>
-               </Button>
-               <Button fx:id="cancelButton"  text="Отмена" />
-               <GridPane.margin>
-                  <Insets top="10.0" />
-               </GridPane.margin>
-            </HBox>
+         <HBox prefHeight="441.0" prefWidth="392.0" styleClass="container" BorderPane.alignment="CENTER">
+            <children>
+               <GridPane hgap="50.0" prefHeight="441.0" prefWidth="378.0" vgap="15.0">
+            
+                  <Label text="Номер заявки:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="requestId" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            
+                  <Label text="Название:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <columnConstraints>
-               <ColumnConstraints />
-               <ColumnConstraints />
-            </columnConstraints>
-            <rowConstraints>
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-            </rowConstraints>
+                  <Label text="Тип заявки:" GridPane.rowIndex="2" />
+                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            
+                  <Label text="Приоритет:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="priorityCombobox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            
+                  <Label text="Ответственный:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="assigneeCombobox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            
+                  <CheckBox fx:id="closeAfterSaveCheckBox" text="Закрыть форму после сохранения" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            
+                  <HBox spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                     <Button fx:id="saveButton" text="Сохранить">
+                        <HBox.margin>
+                           <Insets left="60.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="cancelButton" text="Отмена" />
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+      
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <HBox.margin>
+                     <Insets left="30.0" />
+                  </HBox.margin>
+               </GridPane>
+               <VBox styleClass="container">
+                  <children>
+               
+                        <Label text="Описание:" />
+                     <TextArea prefHeight="283.0" prefWidth="488.0" />
+                  </children>
+               </VBox>
+            </children>
             <BorderPane.margin>
-               <Insets left="55.0" top="30.0" />
+               <Insets top="50.0" />
             </BorderPane.margin>
-         </GridPane>
+         </HBox>
       </center>
       <bottom>
 
@@ -77,5 +92,21 @@
             </BorderPane.margin>
          </Label>
       </bottom>
+      <top>
+         <VBox prefHeight="72.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+            <children>
+               <HBox prefHeight="50.0" prefWidth="800.0" styleClass="top_panel">
+                  <children>
+                     <Label styleClass="name_form" text="Создать новую заявку">
+                        <HBox.margin>
+                           <Insets left="20.0" top="18.0" />
+                        </HBox.margin>
+                     </Label>
+                  </children>
+               </HBox>
+               <Line endX="849.0" startX="-100.0" styleClass="line" />
+            </children>
+         </VBox>
+      </top>
    </BorderPane>
 </AnchorPane>
