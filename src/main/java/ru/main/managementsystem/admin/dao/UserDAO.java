@@ -16,7 +16,12 @@ public class UserDAO {
     private static final String SELECT_ALL_USERS =
             "SELECT u.user_id, u.username, u.full_name, u.password_hash, u.email, " +
                     "d.name as department_name, u.is_active, u.created_at, u.last_login " +
-                    "FROM users u LEFT JOIN departments d ON u.department_id = d.department_id";
+                    "FROM users u LEFT JOIN departments d ON u.department_id = d.department_id where u.username != 'admin'";
+
+    private static final String SELECT_ALL_ACTIVE_USERS =
+            "SELECT u.user_id, u.username, u.full_name, u.password_hash, u.email, " +
+                    "d.name as department_name, u.is_active, u.created_at, u.last_login " +
+                    "FROM users u LEFT JOIN departments d ON u.department_id = d.department_id where u.username != 'admin' and u.is_active = true";
 
     public List<User> getAllUsers() throws SQLException {
         List<User> users = new ArrayList<>();
@@ -162,4 +167,27 @@ public class UserDAO {
         }
     }
 
+    public List<User> getAllActiveUsers() throws SQLException {
+        List<User> users = new ArrayList<>();
+
+        try (Connection conn = DB.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(SELECT_ALL_ACTIVE_USERS)) {
+
+            while (rs.next()) {
+                users.add(new User(
+                        rs.getInt("user_id"),
+                        rs.getString("username"),
+                        rs.getString("password_hash"),
+                        rs.getString("full_name"),
+                        rs.getString("email"),
+                        rs.getString("department_name"),
+                        rs.getBoolean("is_active"),
+                        rs.getString("created_at"),
+                        rs.getString("last_login")
+                ));
+            }
+        }
+        return users;
+    }
 }

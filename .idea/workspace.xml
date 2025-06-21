@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Добавлена авторизация через базу">
+    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="UI для юзера, заглушка в отчеты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management.db" beforeDir="false" afterPath="$PROJECT_DIR$/management.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/DataBase/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/DataBase/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/Views/ViewFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/admin/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/auth.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -77,6 +72,7 @@
       <recent name="ru.main.managementsystem.admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.main.managementsystem.Views" />
       <recent name="ru.main.managementsystem" />
     </key>
   </component>
@@ -171,7 +167,55 @@
       <option name="project" value="LOCAL" />
       <updated>1748636088633</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Изменена главная форма при входе. Добавлено создание учетки админа, если база пуста">
+      <option name="closed" value="true" />
+      <created>1748772405364</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748772405364</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Добавлена логика для экрана Заявки">
+      <option name="closed" value="true" />
+      <created>1748793188863</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748793188863</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Фикс фильтров">
+      <option name="closed" value="true" />
+      <created>1748892817674</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748892817674</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Подключены формы для USER">
+      <option name="closed" value="true" />
+      <created>1748897084749</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748897084749</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Подключены формы для USER">
+      <option name="closed" value="true" />
+      <created>1748897106819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748897106819</updated>
+    </task>
+    <task id="LOCAL-00013" summary="UI для юзера, заглушка в отчеты">
+      <option name="closed" value="true" />
+      <created>1748954039235</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748954039235</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -182,6 +226,18 @@
     <MESSAGE value="Подключена База данных. CRUD для users" />
     <MESSAGE value="Фикс даты, хэширование пароля" />
     <MESSAGE value="Добавлена авторизация через базу" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена авторизация через базу" />
+    <MESSAGE value="Изменена главная форма при входе. Добавлено создание учетки админа, если база пуста" />
+    <MESSAGE value="Добавлена логика для экрана Заявки" />
+    <MESSAGE value="Фикс фильтров" />
+    <MESSAGE value="Подключены формы для USER" />
+    <MESSAGE value="UI для юзера, заглушка в отчеты" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI для юзера, заглушка в отчеты" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="pstmt" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

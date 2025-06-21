@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class User {
-    private final BooleanProperty selected = new SimpleBooleanProperty(false);
     private final IntegerProperty userId;
     private final StringProperty username;
     private final StringProperty password;
@@ -64,18 +63,6 @@ public class User {
 
     public boolean isAdmin(){
         return this.getUsername().equals("admin");
-    }
-
-    public boolean isSelected() {
-        return selected.get();
-    }
-
-    public BooleanProperty selectedProperty() {
-        return selected;
-    }
-
-    public void setSelected(boolean selected) {
-        this.selected.set(selected);
     }
 
     public int getUserId() {

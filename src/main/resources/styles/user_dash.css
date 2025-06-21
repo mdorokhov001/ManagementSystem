@@ -123,24 +123,37 @@
     -fx-background-color: #9ACBD0; /* Цвет фона при наведении на строку (по желанию) */
 }
 
-/* Диалоговое окно */
-.users_dialog{
+/* Окно добавить заявку */
+.add_request{
     -fx-background-color : #F2EFE7;
     -fx-font-family: "Trebuchet MS";
 }
 
-.users_dialog Button{
+.add_request .name_form{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #48A6A7;
+}
+
+.add_request .line{
+    -fx-stroke : #9ACBD0;
+}
+
+.add_request .container{
+    -fx-spacing: 10;
+}
+
+.add_request Button{
     -fx-background-color : #48A6A7;
     -fx-text-fill: #FFFFFF;
     -fx-pref-height: 20;
     -fx-font-size: 1.2em;
 }
-.users_dialog Button:hover{
+.add_request Button:hover{
     -fx-cursor: hand;
     -fx-background-color : #419596;
 }
 
-.users_dialog PasswordField {
+.add_request TextField{
     -fx-background-color : #F2EFE7;
     -fx-border-color: #48A6A7;
     -fx-text-fill: #48A6A7;
@@ -149,26 +162,19 @@
     -fx-font-size: 1.2em;
 }
 
-.users_dialog TextField{
+.add_request TextArea{
     -fx-background-color : #F2EFE7;
     -fx-border-color: #48A6A7;
     -fx-text-fill: #48A6A7;
-    -fx-pref-width: 200;
-    -fx-pref-height: 20;
     -fx-font-size: 1.2em;
 }
 
-.users_dialog .name_form{
-    -fx-font-size: 1.3em;
-    -fx-text-fill: #006A71;
-}
-
-.users_dialog Label{
+.add_request Label{
     -fx-font-size: 1.2em;
     -fx-text-fill: #48A6A7;
 }
 
-.users_dialog ComboBox{
+.add_request ComboBox{
     -fx-background-color : #9ACBD0;
     -fx-border-color: #48A6A7;
     -fx-text-fill: #FFFFFF;
@@ -176,22 +182,22 @@
     -fx-pref-width: 200;
 }
 
-.users_dialog CheckBox{
+.add_request CheckBox{
     -fx-text-fill: #48A6A7;
     -fx-font-size: 1em;
 }
 
-.users_dialog CheckBox .box{
+.add_request CheckBox .box{
     -fx-background-color : #9ACBD0;
     -fx-border-color: #48A6A7;
     -fx-border: 1;
 }
 
-.users_dialog CheckBox:hover{
+.add_request CheckBox:hover{
     -fx-cursor: hand;
 }
 
-.users_dialog .error_label{
+.add_request .error_label{
     -fx-font-size: 1.2em;
     -fx-text-fill: #EC607D;
     -fx-pref-width: 260;

@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 public class AdminDashboardController implements Initializable {
     public Label logoLabel;
     public Button usersButton;
-    public Button ordersButton;
+    public Button requestsButton;
     public Button reportsButton;
     public Button settingsButton;
     public Button logoutButton;
@@ -23,25 +23,25 @@ public class AdminDashboardController implements Initializable {
 
     private void addListeners(){
         usersButton.setOnAction(event -> onUsers());
-        ordersButton.setOnAction(event -> onOrders());
+        requestsButton.setOnAction(event -> onOrders());
         reportsButton.setOnAction(event -> onReports());
         settingsButton.setOnAction(event -> onSettingsButton());
     }
 
     private void onUsers(){
         System.out.println("Кнопка нажата");
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Пользователи");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Пользователи");
     }
 
     private void onOrders(){
         System.out.println("Кнопка нажата");
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Заявки");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Заявки");
     }
     private void onReports(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Отчеты");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Отчеты");
     }
     private void onSettingsButton(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Настройки");
+        Model.getInstance().getAdminViewFactory().getAdminSelectedMenuItem().set("Настройки");
     }
 
 
