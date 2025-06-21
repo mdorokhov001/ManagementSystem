@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="Подключены формы для USER">
+    <list default="true" id="ce076a48-cf11-44ba-b3ac-9369dc0b3bc5" name="Changes" comment="UI для юзера, заглушка в отчеты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/ReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/main/managementsystem/admin/submenues/ReportsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/add_request.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/add_request.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/requests.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ru/main/managementsystem/user/requests.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/user_dash.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/user_dash.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management.db" beforeDir="false" afterPath="$PROJECT_DIR$/management.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748897106819</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="UI для юзера, заглушка в отчеты">
+      <option name="closed" value="true" />
+      <created>1748954039235</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748954039235</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,7 +230,8 @@
     <MESSAGE value="Добавлена логика для экрана Заявки" />
     <MESSAGE value="Фикс фильтров" />
     <MESSAGE value="Подключены формы для USER" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подключены формы для USER" />
+    <MESSAGE value="UI для юзера, заглушка в отчеты" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI для юзера, заглушка в отчеты" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
